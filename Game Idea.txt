@@ -1,0 +1,19 @@
+Game Idea
+Genre: Visual Pet
+Inspiration: 
+	I want to fulfill my childhood desire of owning a Tamagotchi.
+	However, I notice that the game requires a lot of attention without player's valuntary (The pet dies after being neglet for too long)
+	Because of that, I would like to recreate Tamagotchi visual pet style game without high stake loss.
+Game mechanics:
+	Choose a pet
+	Feed the pet
+	Clean the litter
+	Give a medicine
+	Play with the pet
+	Shower the pet
+	Brush the pet hair
+	Gain/ lost trust
+Concerns:
+	Timing (how to calculate the timing of pet's needs without notification system)
+	Economy sytem (ex. trust/ happyness/ tireness/ health/ growth gadge)
+	End goal of the game (might relate to theme ex. finding a new home for strayed dogs/ cat, befriending with a crow.)
