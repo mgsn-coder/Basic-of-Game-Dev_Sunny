@@ -1,4 +1,6 @@
 Game Idea
+
+1. Sunny's Tamagotchi Reskinning
 Genre: Visual Pet
 Inspiration: 
 	I want to fulfill my childhood desire of owning a Tamagotchi.
@@ -9,11 +11,24 @@ Game mechanics:
 	Feed the pet
 	Clean the litter
 	Give a medicine
-	Play with the pet
+	Pet the pet
 	Shower the pet
 	Brush the pet hair
 	Gain/ lost trust
 Concerns:
 	Timing (how to calculate the timing of pet's needs without notification system)
-	Economy sytem (ex. trust/ happyness/ tireness/ health/ growth gadge)
+	Economy system (ex. trust/ happyness/ tireness/ health/ growth gadge)
 	End goal of the game (might relate to theme ex. finding a new home for strayed dogs/ cat, befriending with a crow.)
+
+
+2. Seagull Illegal ;P
+Genre: Endless Runner, Space-shooting
+Inspiration:
+	Incase the Tamagotchi one is too overwhelming for the project and diminish my opportunities to learn, this one would be more flexible. 
+	My first idea is about creating a game that encourage tourists to avoid holding food in open space and seagull attack. Additionally, the game can send the message about the seagulls are good for cleaning the beach (if player collect enough trash, player unlock a badge).
+Goal of The Game: Sustain the hunger bar by collecting food and avoiding hitting obstacles
+End of The Game: The hunger bar reduces to zero
+Game Mechanics:
+	Move up, left, right, and down
+	Collect food (trash, ice-cream, burger, small shells)
+	Avoid obstacles (Human, pole, trash can)
