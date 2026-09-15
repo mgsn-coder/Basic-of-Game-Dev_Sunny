@@ -6,11 +6,11 @@ var number
 
 func run():
 	for number in range(10):
-		print() # what is inclusive?
+		print(number) 
 
 #rewrite it as a while loop
-
-	while number > 10:
+	var number = 1
+	while number <= 10:
 		print(number)
 		number += 1
 
@@ -23,3 +23,7 @@ func calculate_sum():
 	for number in range(array):
 		element = array[1+2+3+4+5] #culcurate the sum
 		print(element) #print the sum
+		
+	var scores := [10,9,7,10,6]
+	var total := 0
+	

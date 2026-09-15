@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Problem Set 2"
-run/main_scene="uid://dtl84o8h21ugg"
+config/name="Problem Set 3"
+run/main_scene="uid://b7p2dvm2ybllg"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

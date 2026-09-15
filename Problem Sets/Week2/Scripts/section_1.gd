@@ -24,8 +24,12 @@ enemy.speed += 10
 #endregion
 
 #Declare a variable named player_name and assign it a name of your choice as value
-
+var mgsn
+func run():
+	print(mgsn)
+	
 #Declare a variable max_health with an explicit type annotation of int, set to 100.
+var max_health = 100
 
 #Declare a variable is_alive as a boolean, set to true.
 
