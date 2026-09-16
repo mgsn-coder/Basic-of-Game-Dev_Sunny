@@ -46,16 +46,55 @@ var a = 5
 a = a - 3
 a = 5
 a = a + a
+		a = 10 # my answer
 
 4.2) What is the final value of a in this example?
 var a = 3
 var b = 2
-var c = a + b
+var c = a + b  # c= 5
 var b = 0
-var a = c - b
+var a = c - b  # a=5
 var b = 10
+		a = 5  # my answer
 
 '''
 # Called when the node enters the scene tree for the first time.
+
+#part 1
+var health : int = 100
+var max_health : int = 100
+var speed : int = 50
+var player_name = "MEGASUNNIE"
+
+func player_info():
+	print(player_name, " | HP: ", health, "/100 ", "| SPEED: ", speed, "/50")
+	
+#part 2
+'''
+Erik showed me how to declare variables to assure it has default values.
+It was a bit advanced for me right now, so I returned the code to way it is easy to follow.
+For now.
+'''
+#func take_damage(times: int = 1,damage: int = 2):
+func take_damage(bibi,damage):
+	while bibi > 0:
+		#print("HITS LEFT: ", bibi)
+		bibi -= 1
+		health -= damage
+		print("TAKE DAMAGE: -", damage)
+		
+#part 3
+func heal(amount):
+	while health < max_health:
+		health += amount
+		if health > max_health:
+			health = max_health
+		print("HEAL: +", amount)
+		player_info()
+	print("HOORAY!")
+
 func _ready() -> void:
-	pass
+	player_info()
+	take_damage(2,15) #Erik taught me to do a bit futher about passing 2 variables.🙏
+	player_info()
+	heal(7)
