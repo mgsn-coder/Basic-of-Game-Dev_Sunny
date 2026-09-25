@@ -1,21 +1,21 @@
-[gd_scene format=3 uid="uid://bft0s17aekjcy"]
+[gd_scene format=3 uid="uid://00iaw3kurlb6"]
 
-[ext_resource type="Texture2D" uid="uid://ck3blpaubhuf1" path="res://Assets/sprites/knight.png" id="1_f50pn"]
+[ext_resource type="Texture2D" uid="uid://ck3blpaubhuf1" path="res://Assets/sprites/knight.png" id="1_v0iea"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ij6vw"]
-atlas = ExtResource("1_f50pn")
+atlas = ExtResource("1_v0iea")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ghijl"]
-atlas = ExtResource("1_f50pn")
+atlas = ExtResource("1_v0iea")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_44cfe"]
-atlas = ExtResource("1_f50pn")
+atlas = ExtResource("1_v0iea")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dd465"]
-atlas = ExtResource("1_f50pn")
+atlas = ExtResource("1_v0iea")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ij6vw"]
