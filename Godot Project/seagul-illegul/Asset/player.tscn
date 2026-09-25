@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bcqm7ragopo3x"]
+
+[ext_resource type="Texture2D" uid="uid://br0csy8qprstr" path="res://Asset/seagull-soaring-gracefully-above-coastal-waters-wildlife-photography-serene-atmosphere-aerial-view-png.webp" id="1_m0avr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i37fe"]
+radius = 14.142136
+
+[node name="Player" type="CharacterBody2D" unique_id=1869065762]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=617099067]
+position = Vector2(664.4082, 523.375)
+scale = Vector2(0.29357138, 0.2935714)
+texture = ExtResource("1_m0avr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2054339829]
+position = Vector2(-1, -1)
+shape = SubResource("CircleShape2D_i37fe")
