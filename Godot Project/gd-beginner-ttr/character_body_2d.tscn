@@ -38,10 +38,18 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1102348948]
+[sub_resource type="CircleShape2D" id="CircleShape2D_fxwi0"]
+radius = 5.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1102348948]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1948492149]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_ij6vw")
 animation = &"Idle"
-frame_progress = 0.68854225
+autoplay = "Idle"
+frame_progress = 0.81683034
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=365252838]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_fxwi0")
