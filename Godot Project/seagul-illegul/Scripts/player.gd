@@ -2,7 +2,7 @@
 
 #func _process(delta: float): position = get_global_mouse_position()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# We create a local variable to store the input direction.
 	var direction = Vector3.ZERO
 

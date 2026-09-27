@@ -1,4 +1,4 @@
 extends Sprite2D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float): position = get_global_mouse_position()
+func _process(_delta: float): position = get_global_mouse_position()
