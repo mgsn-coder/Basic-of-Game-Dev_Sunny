@@ -5,4 +5,4 @@
 [node name="world" type="Node2D" unique_id=559861434]
 
 [node name="Player" parent="." unique_id=1869065762 instance=ExtResource("1_lwsql")]
-position = Vector2(561, 499)
+position = Vector2(-9, 4)

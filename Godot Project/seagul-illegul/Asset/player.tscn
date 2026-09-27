@@ -8,10 +8,13 @@ radius = 14.142136
 [node name="Player" type="CharacterBody2D" unique_id=1869065762]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=617099067]
-position = Vector2(664.4082, 523.375)
+position = Vector2(-9, -36)
 scale = Vector2(0.29357138, 0.2935714)
 texture = ExtResource("1_m0avr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2054339829]
-position = Vector2(-1, -1)
+position = Vector2(-3, -28)
 shape = SubResource("CircleShape2D_i37fe")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=293527522]
+position = Vector2(-3, -28)
