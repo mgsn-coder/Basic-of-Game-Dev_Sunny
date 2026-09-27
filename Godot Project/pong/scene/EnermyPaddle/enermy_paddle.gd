@@ -5,5 +5,5 @@ var ball : CharacterBody2D
 func _ready() -> void:
 	ball = get_parent().get_node("Ball")
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	global_position.y = ball.global_position.y
