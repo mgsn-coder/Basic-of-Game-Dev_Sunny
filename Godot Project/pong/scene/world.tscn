@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://7kesxt8tra0q"]
+
+[ext_resource type="PackedScene" uid="uid://84n6e880rv67" path="res://scene/PlayerPaddle/Player_Paddle.tscn" id="1_txmk2"]
+[ext_resource type="Script" uid="uid://beec3xep1hjee" path="res://scene/PlayerPaddle/Player_Paddle.gd" id="2_emkrx"]
+[ext_resource type="PackedScene" uid="uid://de78u6sepvyir" path="res://scene/ball/ball.tscn" id="2_w4qq1"]
+[ext_resource type="PackedScene" uid="uid://bjogj0v5hhgi4" path="res://scene/EnermyPaddle/enermy_paddle.tscn" id="3_w4qq1"]
+[ext_resource type="Script" uid="uid://48h7gn0lqe35" path="res://scene/EnermyPaddle/enermy_paddle.gd" id="5_0tg4p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxwi0"]
+size = Vector2(1206, 20)
+
+[node name="World" type="Node2D" unique_id=815271167]
+
+[node name="Player_Paddle" parent="." unique_id=2119905541 instance=ExtResource("1_txmk2")]
+position = Vector2(73, 335)
+scale = Vector2(1.2, 1.2)
+script = ExtResource("2_emkrx")
+
+[node name="Ball" parent="." unique_id=1477803046 instance=ExtResource("2_w4qq1")]
+position = Vector2(193, 335)
+
+[node name="EnermyPaddle" parent="." unique_id=1569243824 instance=ExtResource("3_w4qq1")]
+position = Vector2(1060, 328)
+script = ExtResource("5_0tg4p")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2085556322]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=511089350]
+position = Vector2(572, -1)
+shape = SubResource("RectangleShape2D_fxwi0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1648013669]
+position = Vector2(572, 645)
+shape = SubResource("RectangleShape2D_fxwi0")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=795785568]
+position = Vector2(0, 325)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_fxwi0")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=2048789480]
+position = Vector2(1152, 325)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_fxwi0")
