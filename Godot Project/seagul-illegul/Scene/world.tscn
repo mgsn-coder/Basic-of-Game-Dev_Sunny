@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://v333ccay1du7" path="res://Scene/oreange.tscn" id="2_scul4"]
 [ext_resource type="PackedScene" uid="uid://bkjbwy5bgb8jq" path="res://Scene/pear.tscn" id="3_pcvp0"]
 [ext_resource type="PackedScene" uid="uid://dj88jw8vrenm7" path="res://Scene/grape.tscn" id="4_pcvp0"]
+[ext_resource type="FontFile" uid="uid://t2vapru5go5k" path="res://Asset/fonts/PixelOperator8-Bold.ttf" id="6_37axr"]
+[ext_resource type="Script" uid="uid://tsbm6jarxrtr" path="res://Scripts/game_manager.gd" id="7_ol2hl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i37fe"]
 size = Vector2(254, 10)
@@ -12,6 +14,19 @@ size = Vector2(254, 10)
 [node name="world" type="Node2D" unique_id=908174599]
 script = ExtResource("1_dlwip")
 food_scenes = Array[PackedScene]([ExtResource("2_scul4"), ExtResource("3_pcvp0"), ExtResource("4_pcvp0")])
+
+[node name="GameManager" type="Node" parent="." unique_id=1083365599]
+unique_name_in_owner = true
+script = ExtResource("7_ol2hl")
+
+[node name="Score" type="Label" parent="GameManager" unique_id=1579296924]
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 81.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("6_37axr")
+theme_override_font_sizes/font_size = 8
+text = "score:"
 
 [node name="FoodSpawnTimer" type="Timer" parent="." unique_id=1290048354]
 autostart = true

@@ -17,4 +17,5 @@ func _ready() -> void:
 func _on_food_spawn_timer_timeout() -> void:
 	var f = food_scenes.pick_random().instantiate() #create new food
 	f.global_position = Vector2(randf_range(20,140),-10) #set position
+	f.game_manager = $GameManager #connect it to GameManager
 	food_container.add_child(f) #add it as a child of the scene
