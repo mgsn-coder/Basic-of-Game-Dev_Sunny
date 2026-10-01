@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://bvdnlfx0fuky3"]
 
+[ext_resource type="Script" uid="uid://cre6mp8xryvmc" path="res://Scene/world.gd" id="1_dlwip"]
 [ext_resource type="PackedScene" uid="uid://dxumrnjw1un1t" path="res://Scene/Player.tscn" id="1_emx41"]
 
 [node name="world" type="Node2D" unique_id=908174599]
+script = ExtResource("1_dlwip")
 
-[node name="CharacterBody2D" parent="." unique_id=1819413524 instance=ExtResource("1_emx41")]
+[node name="Player" parent="." unique_id=1819413524 instance=ExtResource("1_emx41")]
 top_level = true
-position = Vector2(-4, 96)
+position = Vector2(50, 23)
+
+[node name="PlayerSpawnPos" type="Marker2D" parent="." unique_id=266284616]
+position = Vector2(0, 95)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=285086171]

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://br0csy8qprstr" path="res://Asset/seagull-soaring-gracefully-above-coastal-waters-wildlife-photography-serene-atmosphere-aerial-view-png.webp" id="1_3eeal"]
 [ext_resource type="Script" uid="uid://bjv51k18kojle" path="res://Scripts/keys_movement.gd" id="2_3eeal"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1819413524]
+[node name="Player" type="CharacterBody2D" unique_id=1819413524]
 motion_mode = 1
 script = ExtResource("2_3eeal")
 
