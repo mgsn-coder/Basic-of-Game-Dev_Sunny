@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var flying_speed := 250.0
+var flying_speed := 200.0
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 func get_input():

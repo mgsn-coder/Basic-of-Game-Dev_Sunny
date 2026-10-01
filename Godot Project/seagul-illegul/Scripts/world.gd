@@ -4,6 +4,9 @@ extends Node2D
 
 @onready var player_spawn_pos: Marker2D = $PlayerSpawnPos
 @onready var player: CharacterBody2D = $Player
+@onready var timer: Timer = $FoodSpawnTimer
+@onready var food_container: Node2D = $FoodContainer
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,6 +14,7 @@ func _ready() -> void:
 	player.global_position = player_spawn_pos.global_position
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_food_spawn_timer_timeout() -> void:
+	var f = food_scenes.pick_random().instantiate() #create new food
+	f.global_position = Vector2(randf_range(20,140),-10) #set position
+	food_container.add_child(f) #add it as a child of the scene

@@ -2,7 +2,23 @@
 
 [ext_resource type="PackedScene" uid="uid://v333ccay1du7" path="res://Scene/oreange.tscn" id="1_ui8oq"]
 
+[sub_resource type="GDScript" id="GDScript_ui8oq"]
+script/source = "extends \"res://Scripts/orange.gd\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+"
+
 [node name="pear" unique_id=14560559 instance=ExtResource("1_ui8oq")]
+script = SubResource("GDScript_ui8oq")
+fruit_name = "pear"
 
 [node name="Sprite2D" parent="." index="0" unique_id=1335201774]
 region_rect = Rect2(20, 0, 9, 16)
