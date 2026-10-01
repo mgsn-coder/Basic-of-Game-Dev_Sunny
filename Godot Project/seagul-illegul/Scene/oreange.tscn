@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://v333ccay1du7"]
 
+[ext_resource type="Script" uid="uid://c1rqcn6juvhi2" path="res://Scripts/orange.gd" id="1_h1ke6"]
 [ext_resource type="Texture2D" uid="uid://d0hheuwf7dkyt" path="res://Asset/fruit.png" id="1_o21ps"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fxwi0"]
 radius = 48.0
 
-[node name="Food" type="Area2D" unique_id=14560559]
+[node name="orange" type="Area2D" unique_id=14560559]
 scale = Vector2(0.1, 0.1)
+collision_mask = 2
+script = ExtResource("1_h1ke6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1335201774]
 position = Vector2(-4, -20)
@@ -17,3 +20,8 @@ region_rect = Rect2(2, 18, 11, 13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1315052466]
 shape = SubResource("CircleShape2D_fxwi0")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1509279551]
+position = Vector2(0, -120)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bjv51k18kojle" path="res://Scripts/keys_movement.gd" id="2_3eeal"]
 
 [node name="Player" type="CharacterBody2D" unique_id=1819413524]
+collision_layer = 2
 motion_mode = 1
 script = ExtResource("2_3eeal")
 

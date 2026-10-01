@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var food_scenes :Array[PackedScene]= []
+
 @onready var player_spawn_pos: Marker2D = $PlayerSpawnPos
 @onready var player: CharacterBody2D = $Player
 

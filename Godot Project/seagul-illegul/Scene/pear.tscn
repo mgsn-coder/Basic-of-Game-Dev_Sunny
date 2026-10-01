@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bkjbwy5bgb8jq"]
+
+[ext_resource type="PackedScene" uid="uid://v333ccay1du7" path="res://Scene/oreange.tscn" id="1_ui8oq"]
+
+[node name="pear" unique_id=14560559 instance=ExtResource("1_ui8oq")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1335201774]
+region_rect = Rect2(20, 0, 9, 16)

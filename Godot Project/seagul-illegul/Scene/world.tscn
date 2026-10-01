@@ -1,14 +1,16 @@
 [gd_scene format=3 uid="uid://bvdnlfx0fuky3"]
 
-[ext_resource type="Script" uid="uid://cre6mp8xryvmc" path="res://Scene/world.gd" id="1_dlwip"]
+[ext_resource type="Script" uid="uid://cre6mp8xryvmc" path="res://Scripts/world.gd" id="1_dlwip"]
 [ext_resource type="PackedScene" uid="uid://dxumrnjw1un1t" path="res://Scene/Player.tscn" id="1_emx41"]
-[ext_resource type="PackedScene" uid="uid://v333ccay1du7" path="res://Scene/food.tscn" id="3_ejll3"]
+[ext_resource type="PackedScene" uid="uid://v333ccay1du7" path="res://Scene/oreange.tscn" id="2_scul4"]
+[ext_resource type="PackedScene" uid="uid://bkjbwy5bgb8jq" path="res://Scene/pear.tscn" id="3_pcvp0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i37fe"]
 size = Vector2(254, 10)
 
 [node name="world" type="Node2D" unique_id=908174599]
 script = ExtResource("1_dlwip")
+food_scenes = Array[PackedScene]([ExtResource("2_scul4"), ExtResource("3_pcvp0")])
 
 [node name="Player" parent="." unique_id=1819413524 instance=ExtResource("1_emx41")]
 position = Vector2(26, 39)
@@ -17,9 +19,6 @@ position = Vector2(26, 39)
 position = Vector2(0, 95)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=285086171]
-
-[node name="Food" parent="." unique_id=14560559 instance=ExtResource("3_ejll3")]
-position = Vector2(-13, -28)
 
 [node name="WorldBoundary" type="StaticBody2D" parent="." unique_id=1811674723]
 
@@ -40,3 +39,7 @@ shape = SubResource("RectangleShape2D_i37fe")
 position = Vector2(80, 0)
 rotation = -1.5707964
 shape = SubResource("RectangleShape2D_i37fe")
+
+[node name="FoodContainer" type="Node2D" parent="." unique_id=1025606170]
+
+[node name="FoodSpawnTimer" type="Timer" parent="." unique_id=1290048354]
