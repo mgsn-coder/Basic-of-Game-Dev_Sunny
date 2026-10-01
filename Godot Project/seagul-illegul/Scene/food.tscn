@@ -1,3 +1,19 @@
 [gd_scene format=3 uid="uid://v333ccay1du7"]
 
+[ext_resource type="Texture2D" uid="uid://d0hheuwf7dkyt" path="res://Asset/fruit.png" id="1_o21ps"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fxwi0"]
+radius = 48.0
+
 [node name="Food" type="Area2D" unique_id=14560559]
+scale = Vector2(0.1, 0.1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1335201774]
+position = Vector2(-4, -20)
+scale = Vector2(10, 10)
+texture = ExtResource("1_o21ps")
+region_enabled = true
+region_rect = Rect2(2, 18, 11, 13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1315052466]
+shape = SubResource("CircleShape2D_fxwi0")
