@@ -4,6 +4,7 @@
 
 [node name="grape" unique_id=14560559 instance=ExtResource("1_flcxc")]
 fruit_name = "grape"
+points = 3
 
 [node name="Sprite2D" parent="." index="0" unique_id=1335201774]
 region_rect = Rect2(34, 33, 11, 15)

@@ -19,6 +19,7 @@ func _process(_delta: float) -> void:
 [node name="pear" unique_id=14560559 instance=ExtResource("1_ui8oq")]
 script = SubResource("GDScript_ui8oq")
 fruit_name = "pear"
+points = 2
 
 [node name="Sprite2D" parent="." index="0" unique_id=1335201774]
 region_rect = Rect2(20, 0, 9, 16)

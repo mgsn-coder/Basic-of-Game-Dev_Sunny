@@ -4,6 +4,6 @@ extends Node
 
 var score = 0
 
-func add_point():
-	score +=1
+func add_point(points):
+	score += points
 	score_lebel.text = "Score: " + str(score)
