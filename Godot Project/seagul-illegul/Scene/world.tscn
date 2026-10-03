@@ -68,6 +68,7 @@ shape = SubResource("RectangleShape2D_i37fe")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=658725864]
 
 [node name="PurpleStars" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=832718867]
+texture_repeat = 2
 texture = ExtResource("8_ddf65")
 centered = false
 region_enabled = true
