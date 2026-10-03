@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dj88jw8vrenm7" path="res://Scene/grape.tscn" id="4_pcvp0"]
 [ext_resource type="FontFile" uid="uid://t2vapru5go5k" path="res://Asset/fonts/PixelOperator8-Bold.ttf" id="6_37axr"]
 [ext_resource type="Script" uid="uid://tsbm6jarxrtr" path="res://Scripts/game_manager.gd" id="7_ol2hl"]
+[ext_resource type="Texture2D" uid="uid://dedi74r1jvvkj" path="res://Asset/Backgrounds/purple.png" id="8_ddf65"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i37fe"]
 size = Vector2(254, 10)
@@ -61,5 +62,15 @@ rotation = -1.5707964
 shape = SubResource("RectangleShape2D_i37fe")
 
 [node name="FoodContainer" type="Node2D" parent="." unique_id=1025606170]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1484488877]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=658725864]
+
+[node name="PurpleStars" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=832718867]
+texture = ExtResource("8_ddf65")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 160, 240)
 
 [connection signal="timeout" from="FoodSpawnTimer" to="." method="_on_food_spawn_timer_timeout"]
