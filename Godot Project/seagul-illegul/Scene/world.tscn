@@ -30,6 +30,7 @@ theme_override_font_sizes/font_size = 8
 text = "score:"
 
 [node name="FoodSpawnTimer" type="Timer" parent="." unique_id=1290048354]
+wait_time = 2.0
 autostart = true
 
 [node name="Player" parent="." unique_id=1819413524 instance=ExtResource("1_emx41")]

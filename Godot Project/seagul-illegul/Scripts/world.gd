@@ -21,7 +21,12 @@ func _process(_delta: float) -> void:
 	elif Input.is_action_just_pressed("reset"): #reset button
 		get_tree().reload_current_scene()
 		
-		
+	#make all the food fall faster overtime
+	if timer.wait_time > 0.5:
+		timer.wait_time -= _delta * 0.005
+		#print(timer.wait_time) for checking the decreasing timeer
+	elif timer.wait_time < 0.5:
+		timer.wait_time = 0.5
 	
 
 func _on_food_spawn_timer_timeout() -> void:
