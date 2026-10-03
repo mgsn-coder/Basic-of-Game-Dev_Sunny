@@ -7,7 +7,20 @@
 [ext_resource type="PackedScene" uid="uid://dj88jw8vrenm7" path="res://Scene/grape.tscn" id="4_pcvp0"]
 [ext_resource type="FontFile" uid="uid://t2vapru5go5k" path="res://Asset/fonts/PixelOperator8-Bold.ttf" id="6_37axr"]
 [ext_resource type="Script" uid="uid://tsbm6jarxrtr" path="res://Scripts/game_manager.gd" id="7_ol2hl"]
-[ext_resource type="Texture2D" uid="uid://dedi74r1jvvkj" path="res://Asset/Backgrounds/purple.png" id="8_ddf65"]
+[ext_resource type="Texture2D" uid="uid://dcwxwtjrfw5pu" path="res://Asset/Backgrounds/blue.png" id="8_h7cfj"]
+[ext_resource type="Texture2D" uid="uid://bglhcqa8p7bu8" path="res://Asset/PNG/Effects/star1.png" id="9_h7cfj"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fxwi0"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(80, 200, 1)
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = -100.0
+initial_velocity_max = -100.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.01
+scale_max = 0.099999994
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i37fe"]
 size = Vector2(254, 10)
@@ -29,11 +42,22 @@ theme_override_fonts/font = ExtResource("6_37axr")
 theme_override_font_sizes/font_size = 8
 text = "score:"
 
+[node name="PopupPoint" type="Label" parent="GameManager" unique_id=1150563306]
+offset_left = 56.0
+offset_top = 112.0
+offset_right = 96.0
+offset_bottom = 135.0
+theme_override_fonts/font = ExtResource("6_37axr")
+theme_override_font_sizes/font_size = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameManager/PopupPoint" unique_id=609324723]
+
 [node name="FoodSpawnTimer" type="Timer" parent="." unique_id=1290048354]
 wait_time = 2.0
 autostart = true
 
 [node name="Player" parent="." unique_id=1819413524 instance=ExtResource("1_emx41")]
+unique_name_in_owner = true
 position = Vector2(26, 39)
 
 [node name="PlayerSpawnPos" type="Marker2D" parent="." unique_id=266284616]
@@ -46,10 +70,17 @@ motion_mirroring = Vector2(0, 240)
 
 [node name="PurpleStars" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=832718867]
 texture_repeat = 2
-texture = ExtResource("8_ddf65")
+texture = ExtResource("8_h7cfj")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 160, 240)
+
+[node name="StarsParticleEffect" type="GPUParticles2D" parent="." unique_id=1793379238]
+visible = false
+position = Vector2(83, 36)
+amount = 50
+texture = ExtResource("9_h7cfj")
+process_material = SubResource("ParticleProcessMaterial_fxwi0")
 
 [node name="WorldBoundary" type="StaticBody2D" parent="." unique_id=1811674723]
 

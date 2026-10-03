@@ -13,4 +13,6 @@ func _physics_process(_delta: float) -> void:
 func _on_body_entered(_body: Node2D) -> void:
 	print("+1"," ", fruit_name)
 	game_manager.add_point(points)  #add different points
+	game_manager.print(points) #print point of fruit
+	
 	queue_free() #remove food when touch
