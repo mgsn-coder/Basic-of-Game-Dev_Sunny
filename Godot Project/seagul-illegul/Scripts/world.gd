@@ -8,6 +8,8 @@ extends Node2D
 @onready var food_container: Node2D = $FoodContainer
 @onready var pb: ParallaxBackground = $ParallaxBackground
 
+var scroll_speed = 50
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -28,6 +30,12 @@ func _process(_delta: float) -> void:
 	elif timer.wait_time < 0.5:
 		timer.wait_time = 0.5
 	
+	#scrolling background
+	pb.scroll_offset.y += _delta * scroll_speed #increase scrooll_offset each frame
+	#prevent infinite number of bg and will crash
+	if pb.scroll_offset.y >= 240:
+		pb.scroll_offset.y = 0
+	#print(pb.scroll_offset.y) check the number here
 
 func _on_food_spawn_timer_timeout() -> void:
 	var f = food_scenes.pick_random().instantiate() #create new food

@@ -39,8 +39,17 @@ position = Vector2(26, 39)
 [node name="PlayerSpawnPos" type="Marker2D" parent="." unique_id=266284616]
 position = Vector2(80, 220)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=285086171]
-position = Vector2(80, 120)
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1484488877]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=658725864]
+motion_mirroring = Vector2(0, 240)
+
+[node name="PurpleStars" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=832718867]
+texture_repeat = 2
+texture = ExtResource("8_ddf65")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 160, 240)
 
 [node name="WorldBoundary" type="StaticBody2D" parent="." unique_id=1811674723]
 
@@ -63,16 +72,5 @@ rotation = -1.5707964
 shape = SubResource("RectangleShape2D_i37fe")
 
 [node name="FoodContainer" type="Node2D" parent="." unique_id=1025606170]
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1484488877]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=658725864]
-
-[node name="PurpleStars" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=832718867]
-texture_repeat = 2
-texture = ExtResource("8_ddf65")
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 160, 240)
 
 [connection signal="timeout" from="FoodSpawnTimer" to="." method="_on_food_spawn_timer_timeout"]
