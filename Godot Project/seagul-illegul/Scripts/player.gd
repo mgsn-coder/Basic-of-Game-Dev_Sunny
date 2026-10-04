@@ -2,6 +2,7 @@ class_name Player extends CharacterBody2D
 
 var flying_speed := 200.0
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var respawn_timer: Timer = $Timer
 
 
 func get_input():
@@ -20,5 +21,7 @@ func _physics_process(_delta):
 	move_and_slide()
 	
 func _die():
-	queue_free()
-	
+	respawn_timer.start()
+
+func _on_timer_timeout() -> void: #runs when timer ends
+	get_tree().reload_current_scene()

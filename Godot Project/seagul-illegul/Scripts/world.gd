@@ -20,6 +20,7 @@ func _ready() -> void:
 	#Player spawn at Marker2D's position regradless where it is.
 	player.global_position = player_spawn_pos.global_position
 
+
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("quit"): #quit button
 		get_tree().quit()
@@ -49,13 +50,15 @@ func _process(_delta: float) -> void:
 
 func _on_food_spawn_timer_timeout() -> void:
 	var f = food_scenes.pick_random().instantiate() #create new food
-	f.global_position = Vector2(randf_range(20,140),-10) #set position
+	f.global_position = Vector2(randf_range(40,140),-10) #set position
 	f.game_manager = $GameManager #connect it to GameManager
 	food_container.add_child(f) #add it as a child of the scene
 
 
 func _on_enemy_spawn_timer_timeout() -> void:
 	var e = enemy_scenes.pick_random().instantiate()
-	e.global_position = Vector2(randf_range(20,140),-10)
+	e.global_position = Vector2(randf_range(40,120),-10)
 	e.game_manager = $GameManager
 	enemy_container.add_child(e) 
+	
+	

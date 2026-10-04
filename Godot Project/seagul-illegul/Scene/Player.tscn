@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dxumrnjw1un1t"]
 
 [ext_resource type="Texture2D" uid="uid://br0csy8qprstr" path="res://Asset/seagull-soaring-gracefully-above-coastal-waters-wildlife-photography-serene-atmosphere-aerial-view-png.webp" id="1_3eeal"]
-[ext_resource type="Script" uid="uid://bjv51k18kojle" path="res://Scripts/keys_movement.gd" id="2_3eeal"]
+[ext_resource type="Script" uid="uid://bjv51k18kojle" path="res://Scripts/player.gd" id="2_3eeal"]
 
 [node name="Player" type="CharacterBody2D" unique_id=1819413524]
 collision_layer = 2
@@ -17,3 +17,7 @@ texture = ExtResource("1_3eeal")
 polygon = PackedVector2Array(-18, 0, -13, 1, 0, 1, 1, 2, -1, 4, 4, 6, 7, 2, 3, 1, 3, 0, 15, -7, 17, -10, 8, -7, 2, -3, -2, -3, -3, -2, -9, -2)
 
 [node name="Timer" type="Timer" parent="." unique_id=758930428]
+wait_time = 0.6
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
