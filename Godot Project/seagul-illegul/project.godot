@@ -15,6 +15,14 @@ run/main_scene="res://Scene/world.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://nymipgddgpxq"
+
+[autoload]
+
+Music="*uid://duxc2mov3omiq"
+
 [display]
 
 window/size/viewport_width=160
