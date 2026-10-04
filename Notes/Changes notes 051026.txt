@@ -5,7 +5,7 @@
 - created die condition - player touch red fruits
 - restart/ reload the scene when player dies
 - 2 types of non-collectables (red orange, red pear)
-- spawninf random red fruits
+- spawning random red fruits
 - parallax background
 - background particles
 - score text
