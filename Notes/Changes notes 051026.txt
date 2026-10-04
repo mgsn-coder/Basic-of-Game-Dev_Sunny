@@ -1,0 +1,12 @@
+- 3 types of collectables (orange, pear, grape
+- spawning random fruits
+- points system (orange = 1, pear = 2, grape = 3)
+- created inherited scenes 
+- created die condition - player touch red fruits
+- restart/ reload the scene when player dies
+- 2 types of non-collectables (red orange, red pear)
+- spawninf random red fruits
+- parallax background
+- background particles
+- score text
+- pop up text score
