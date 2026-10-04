@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bemvtv6amsepo"]
+
+[ext_resource type="Script" uid="uid://b52b3sk1wtbk3" path="res://Scripts/enemy.gd" id="1_4jekx"]
+[ext_resource type="Texture2D" uid="uid://d0hheuwf7dkyt" path="res://Asset/fruit.png" id="2_s685e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hti8k"]
+radius = 5.0
+
+[node name="enemy" type="Area2D" unique_id=1020902774]
+script = ExtResource("1_4jekx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=621017417]
+position = Vector2(0, -2)
+texture = ExtResource("2_s685e")
+region_enabled = true
+region_rect = Rect2(2, 50, 11, 13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2067413764]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_hti8k")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1958573210]
+position = Vector2(0, -12)
+scale = Vector2(0.1, 0.1)
