@@ -13,7 +13,6 @@ func add_point(points):
 	score_lebel.text = "Score: " + str(score)
 	
 func print(points):
-	pop_up.global_position = player.global_position
 	pop_up.text = "+ " + str(points)
 	animation_player.play("popup")
 	

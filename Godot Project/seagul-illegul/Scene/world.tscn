@@ -82,10 +82,10 @@ theme_override_font_sizes/font_size = 8
 text = "score:"
 
 [node name="control" type="Label" parent="GameManager" unique_id=1615173031]
-offset_left = 44.0
-offset_top = 128.0
-offset_right = 120.0
-offset_bottom = 151.0
+offset_left = 43.0
+offset_top = 100.0
+offset_right = 119.0
+offset_bottom = 123.0
 theme_override_colors/font_color = Color(0.46024692, 0.4783178, 0.53253055, 1)
 theme_override_fonts/font = ExtResource("6_37axr")
 theme_override_font_sizes/font_size = 4
@@ -126,7 +126,6 @@ region_enabled = true
 region_rect = Rect2(0, 0, 160, 240)
 
 [node name="StarsParticleEffect" type="GPUParticles2D" parent="." unique_id=1793379238]
-visible = false
 position = Vector2(83, 36)
 amount = 50
 texture = ExtResource("9_h7cfj")
