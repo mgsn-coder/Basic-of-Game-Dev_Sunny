@@ -1,15 +1,18 @@
 extends Node2D
 
 @export var food_scenes :Array[PackedScene]= []
+@export var enemy_scenes : Array[PackedScene] = []
 
 @onready var player_spawn_pos: Marker2D = $PlayerSpawnPos
 @onready var player: CharacterBody2D = $Player
-@onready var timer: Timer = $FoodSpawnTimer
+@onready var food_timer: Timer = $FoodSpawnTimer
+@onready var enemy_timer: Timer = $EnemySpawnTimer
 @onready var food_container: Node2D = $FoodContainer
+@onready var enemy_container: Node2D = $EnemyContainer
+
 @onready var pb: ParallaxBackground = $ParallaxBackground
 
 var scroll_speed = 50
-
 
 
 # Called when the node enters the scene tree for the first time.
@@ -23,12 +26,19 @@ func _process(_delta: float) -> void:
 	elif Input.is_action_just_pressed("reset"): #reset button
 		get_tree().reload_current_scene()
 		
-	#make all the food fall faster overtime
-	if timer.wait_time > 0.5:
-		timer.wait_time -= _delta * 0.005
+	
+	#make food and enemy fall faster over time
+	if food_timer.wait_time > 0.5:
+		food_timer.wait_time -= _delta * 0.005
 		#print(timer.wait_time) for checking the decreasing timeer
-	elif timer.wait_time < 0.5:
-		timer.wait_time = 0.5
+	elif food_timer.wait_time < 0.5:
+		food_timer.wait_time = 0.5
+	
+	if enemy_timer.wait_time > 0.5:
+		enemy_timer.wait_time -= _delta * 0.005
+		#print(timer.wait_time) for checking the decreasing timeer
+	elif enemy_timer.wait_time < 0.5:
+		enemy_timer.wait_time = 0.5
 	
 	#scrolling background
 	pb.scroll_offset.y += _delta * scroll_speed #increase scrooll_offset each frame
@@ -42,3 +52,10 @@ func _on_food_spawn_timer_timeout() -> void:
 	f.global_position = Vector2(randf_range(20,140),-10) #set position
 	f.game_manager = $GameManager #connect it to GameManager
 	food_container.add_child(f) #add it as a child of the scene
+
+
+func _on_enemy_spawn_timer_timeout() -> void:
+	var e = enemy_scenes.pick_random().instantiate()
+	e.global_position = Vector2(randf_range(20,140),-10)
+	e.game_manager = $GameManager
+	enemy_container.add_child(e) 

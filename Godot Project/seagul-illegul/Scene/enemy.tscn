@@ -7,7 +7,9 @@
 radius = 5.0
 
 [node name="enemy" type="Area2D" unique_id=1020902774]
+collision_mask = 2
 script = ExtResource("1_4jekx")
+speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=621017417]
 position = Vector2(0, -2)
@@ -19,6 +21,14 @@ region_rect = Rect2(2, 50, 11, 13)
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_hti8k")
 
-[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1958573210]
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1295848626]
 position = Vector2(0, -12)
 scale = Vector2(0.1, 0.1)
+
+[node name="Timer" type="Timer" parent="." unique_id=219752783]
+wait_time = 0.6
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

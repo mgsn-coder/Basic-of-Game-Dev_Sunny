@@ -1,7 +1,8 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 var flying_speed := 200.0
 @onready var sprite_2d: Sprite2D = $Sprite2D
+
 
 func get_input():
 	#Input buttons
@@ -18,5 +19,6 @@ func _physics_process(_delta):
 	get_input()
 	move_and_slide()
 	
-
+func _die():
+	queue_free()
 	
