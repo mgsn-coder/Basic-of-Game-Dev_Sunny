@@ -138,7 +138,6 @@ region_enabled = true
 region_rect = Rect2(0, 0, 160, 240)
 
 [node name="StarsParticleEffect" type="GPUParticles2D" parent="." unique_id=1793379238]
-visible = false
 position = Vector2(83, 36)
 amount = 50
 texture = ExtResource("9_h7cfj")
