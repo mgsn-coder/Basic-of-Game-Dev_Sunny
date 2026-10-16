@@ -22,6 +22,8 @@ func _physics_process(_delta):
 	
 func _die():
 	respawn_timer.start()
+	#set the timer to restart
 
-func _on_timer_timeout() -> void: #runs when timer ends
-	get_tree().reload_current_scene()
+#func _on_timer_timeout() -> void: #runs when timer ends
+	#get_tree().reload_current_scene()
+	

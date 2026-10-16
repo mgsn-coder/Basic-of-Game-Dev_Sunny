@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://g6bjhq20jkpi"]
 
 [ext_resource type="FontFile" uid="uid://t2vapru5go5k" path="res://Asset/fonts/PixelOperator8-Bold.ttf" id="1_cr80o"]
+[ext_resource type="Script" uid="uid://b1gatiyftkhm4" path="res://Scripts/game_over_scene.gd" id="1_ktqvf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxwi0"]
 bg_color = Color(0.66, 0.38280004, 0.38280004, 1)
@@ -24,6 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ktqvf")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1632694897]
 layout_mode = 1
@@ -106,8 +108,13 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -51.0
-offset_top = -38.0
+offset_top = -31.0
 offset_right = 51.0
 offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_cr80o")
+theme_override_font_sizes/font_size = 10
+text = "RESTART"
+
+[connection signal="pressed" from="Panel/RestartButton" to="." method="_on_restart_button_pressed"]
