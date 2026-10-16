@@ -3,6 +3,8 @@ class_name Player extends CharacterBody2D
 var flying_speed := 200.0
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var respawn_timer: Timer = $Timer
+@onready var gos: Control = $"../UILayer/GameOverScene"
+@export var ui_timer := 0.5
 
 
 func get_input():
@@ -21,8 +23,13 @@ func _physics_process(_delta):
 	move_and_slide()
 	
 func _die():
-	respawn_timer.start()
+	await get_tree().create_timer(ui_timer).timeout
+	#get_tree() = access global game states and perform major actions across project
+	gos.visible = true #Ui is visible when player died
+	queue_free()
+	#respawn_timer.start()
 	#set the timer to restart
+
 
 #func _on_timer_timeout() -> void: #runs when timer ends
 	#get_tree().reload_current_scene()

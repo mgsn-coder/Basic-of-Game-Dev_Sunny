@@ -2,9 +2,46 @@
 
 [ext_resource type="Script" uid="uid://b52b3sk1wtbk3" path="res://Scripts/enemy.gd" id="1_4jekx"]
 [ext_resource type="Texture2D" uid="uid://d0hheuwf7dkyt" path="res://Asset/fruit.png" id="2_s685e"]
+[ext_resource type="AudioStream" uid="uid://c5g5vxwepx3l8" path="res://Asset/sounds/hurt.wav" id="3_s685e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hti8k"]
 radius = 5.0
+
+[sub_resource type="Animation" id="Animation_s685e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D:stream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_s685e")]
+}
+
+[sub_resource type="Animation" id="Animation_n6qjc"]
+resource_name = "hit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D:stream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_s685e")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vmi60"]
+_data = {
+&"RESET": SubResource("Animation_s685e"),
+&"hit": SubResource("Animation_n6qjc")
+}
 
 [node name="enemy" type="Area2D" unique_id=1020902774]
 collision_mask = 2
@@ -23,6 +60,12 @@ shape = SubResource("CircleShape2D_hti8k")
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1295848626]
 position = Vector2(0, -12)
 scale = Vector2(0.1, 0.1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=511344798]
+stream = ExtResource("3_s685e")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1175230853]
+libraries/ = SubResource("AnimationLibrary_vmi60")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

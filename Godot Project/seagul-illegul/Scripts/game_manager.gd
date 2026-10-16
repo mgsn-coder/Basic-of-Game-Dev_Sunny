@@ -10,7 +10,7 @@ var score = 0
 
 func add_point(points):
 	score += points
-	score_lebel.text = "Score: " + str(score)
+	score_lebel.text = "score : " + str(score)
 	
 func print(points):
 	pop_up.text = "+ " + str(points)
