@@ -1,11 +1,16 @@
 class_name Player extends CharacterBody2D
 
+@onready var game_manager: Node = %GameManager
+
 const speeds: Array[float] = [1, 6] #ENi note: min, max
+const hungers: Array[int] = [1,10]
 const top_height: float =  25
 const speed_interval: float = 3
 var direction: float = 1
 
 var current_speed: float = 5
+var current_hunger: int = 0
+var altitude_penalty: int = 0
 
 var flying_speed := 100.0
 @onready var sprite_2d: Sprite2D = $Sprite2D
@@ -13,6 +18,7 @@ var flying_speed := 100.0
 @onready var gos: Control = $"../UILayer/GameOverScene"
 @export var ui_timer := 0.5
 
+var dead = false
 
 	#Input buttons
 '''
@@ -26,10 +32,18 @@ var flying_speed := 100.0
 			elif Input.is_action_pressed("move_left"):
 				sprite_2d.flip_h = false
 '''	
-func ready():
+func _ready():
 	current_speed = (speeds[0] + speeds[1]) / 2 # ENi Note: start with average speed
-	position.x = 240 / 2 #TODO fix this to be connected directly to the viewport size
+	current_hunger = hungers[1]
+	game_manager.update_hunger(current_hunger)
+	dead = false
 
+func too_low_penaly():
+	if altitude_penalty > 24:
+		current_hunger -= 1
+		altitude_penalty -= 24
+		game_manager.update_hunger(current_hunger)
+		
 func get_input():
 	if direction == 1:
 		if Input.is_action_pressed("move_right") && current_speed < speeds[1]:
@@ -66,6 +80,10 @@ func get_input():
 		if position.y + temp_altitude_fix < top_height:
 			temp_altitude_fix = top_height - position.y
 		altitude_fix = temp_altitude_fix
+		too_low_penaly()
+		altitude_penalty += 1
+	else:
+		altitude_penalty = 0
 	position.x += current_speed * direction
 	position.y += altitude_fix
 
@@ -73,14 +91,27 @@ func change_direction():
 	if position.x >= 240: #TODO: fix this to be connected to the viewport size
 		sprite_2d.flip_h = false
 		direction *= -1
+		current_hunger -= 1
+		game_manager.update_hunger(current_hunger)
+		position.x = 239 #TODO: fix this to actually have a size based bouncing
 	if position.x <= 0: #TODO: fix this to be connected to the viewport size
 		sprite_2d.flip_h = true
 		direction *= -1
+		current_hunger -= 1
+		game_manager.update_hunger(current_hunger)
+		position.x = 1 #TODO: fix this to actually have a size based bouncing
+
+func check_hunger():
+	if current_hunger < hungers[0]:
+		dead = true
+		game_manager.player_dead()
+		_die()
 
 func _process(_delta):
 	get_input()
 	#move_and_slide()
 	change_direction()
+	check_hunger()
 	
 func _die():
 	await get_tree().create_timer(ui_timer).timeout

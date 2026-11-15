@@ -50,6 +50,8 @@ func _process(_delta: float) -> void:
 	#print(pb.scroll_offset.y) check the number here
 
 func _on_food_spawn_timer_timeout() -> void:
+	if !player:
+		return
 	var f = food_scenes.pick_random().instantiate() #create new food
 	if player.direction == 1:
 		f.global_position = Vector2(0,randf_range(25,180)) #set position

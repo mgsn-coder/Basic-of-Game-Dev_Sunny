@@ -74,6 +74,35 @@ enemy_scenes = Array[PackedScene]([ExtResource("5_d3jyj"), ExtResource("6_uf7b4"
 [node name="GameOverScene" parent="UILayer" unique_id=356306805 instance=ExtResource("7_qmow2")]
 visible = false
 
+[node name="EndScore" type="Label" parent="UILayer/GameOverScene" unique_id=728935652]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+offset_right = 8.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("9_vncuc")
+theme_override_font_sizes/font_size = 8
+text = "0"
+vertical_alignment = 2
+
+[node name="HighScore" type="Label" parent="UILayer/GameOverScene" unique_id=784704470]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("9_vncuc")
+theme_override_font_sizes/font_size = 8
+text = "0"
+vertical_alignment = 2
+
 [node name="GameManager" type="Node" parent="." unique_id=1083365599]
 unique_name_in_owner = true
 script = ExtResource("8_ba23h")
@@ -87,6 +116,17 @@ offset_bottom = 26.0
 theme_override_fonts/font = ExtResource("9_vncuc")
 theme_override_font_sizes/font_size = 8
 text = "score : 0"
+
+[node name="Hunger" type="Label" parent="GameManager" unique_id=1739687416]
+unique_name_in_owner = true
+offset_left = 161.0
+offset_top = 3.0
+offset_right = 239.0
+offset_bottom = 26.0
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("9_vncuc")
+theme_override_font_sizes/font_size = 8
+text = "Hunger : 0"
 
 [node name="control" type="Label" parent="GameManager" unique_id=1615173031]
 anchors_preset = 8
