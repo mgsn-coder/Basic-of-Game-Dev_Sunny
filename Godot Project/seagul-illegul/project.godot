@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Seagul Illegul"
-run/main_scene="res://Scene/Screens/world.tscn"
+run/main_scene="uid://c44nteexuavqe"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
