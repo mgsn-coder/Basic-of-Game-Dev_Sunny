@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dj88jw8vrenm7"]
 
-[ext_resource type="PackedScene" uid="uid://v333ccay1du7" path="res://Scene/Objects/oreange.tscn" id="1_flcxc"]
+[ext_resource type="PackedScene" uid="uid://v333ccay1du7" path="res://Scene/Objects/old/oreange.tscn" id="1_flcxc"]
 
 [node name="grape" unique_id=14560559 instance=ExtResource("1_flcxc")]
 fruit_name = "grape"

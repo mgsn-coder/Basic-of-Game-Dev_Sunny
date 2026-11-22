@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bkjbwy5bgb8jq"]
 
-[ext_resource type="PackedScene" uid="uid://v333ccay1du7" path="res://Scene/Objects/oreange.tscn" id="1_ui8oq"]
+[ext_resource type="PackedScene" uid="uid://v333ccay1du7" path="res://Scene/Objects/old/oreange.tscn" id="1_ui8oq"]
 
 [sub_resource type="GDScript" id="GDScript_ui8oq"]
 script/source = "extends \"res://Scripts/orange.gd\"
