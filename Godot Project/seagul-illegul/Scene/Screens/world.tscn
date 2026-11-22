@@ -148,14 +148,14 @@ position = Vector2(80, 200)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=658725864]
 texture_repeat = 2
-motion_mirroring = Vector2(0, 240)
+motion_mirroring = Vector2(256, 0)
 
 [node name="PurpleStars" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=832718867]
 texture_repeat = 2
 texture = ExtResource("11_a3pql")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 160, 240)
+region_rect = Rect2(0, 0, 253, 253)
 
 [node name="StarsParticleEffect" type="GPUParticles2D" parent="." unique_id=1793379238]
 position = Vector2(83, 36)
