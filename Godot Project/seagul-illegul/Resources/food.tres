@@ -1,0 +1,6 @@
+[gd_resource type="Resource" format=3 uid="uid://dmgaijm1vat7e"]
+
+[resource]
+resource_name = "Food"
+metadata/hunger = [1, 2, 3]
+metadata/point = [1, 2, 3]

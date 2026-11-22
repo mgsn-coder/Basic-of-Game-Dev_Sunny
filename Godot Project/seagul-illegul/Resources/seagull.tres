@@ -1,0 +1,10 @@
+[gd_resource type="Resource" format=3 uid="uid://bf2jt833xw0qc"]
+
+[sub_resource type="GDScript" id="GDScript_487uy"]
+script/source = "var hungers: Array [int] = [0,10] #ENI Note: min, max
+var speeds: Array [float] = [1.0,5.0] #ENI Note: min, max
+"
+
+[resource]
+resource_name = "Seagull"
+script = SubResource("GDScript_487uy")
