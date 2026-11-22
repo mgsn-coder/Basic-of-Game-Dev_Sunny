@@ -1,6 +1,7 @@
 extends CharacterBody2D
+
 #ENI Note: testing if a resource file can store the const matters.
-const SEAGULL = preload("res://Scene/Objects/seagull.tscn")
+@onready var SEAGULL = preload("res://Resources/seagull.tres").instantiate()
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 #ENI Note: dynamic variables
