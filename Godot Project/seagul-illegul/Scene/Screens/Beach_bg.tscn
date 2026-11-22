@@ -5,6 +5,28 @@
 [ext_resource type="Texture2D" uid="uid://dyfwemrwiq12n" path="res://Asset/Seagull/food.PNG" id="3_f80fy"]
 [ext_resource type="Texture2D" uid="uid://cia8mk1uh83o0" path="res://Asset/Seagull/drone.PNG" id="4_yb4la"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_f80fy"]
+atlas = ExtResource("2_l8g4q")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yb4la"]
+atlas = ExtResource("2_l8g4q")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fxwi0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f80fy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yb4la")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_11qw1"]
 atlas = ExtResource("3_f80fy")
 region = Rect2(0, 0, 16, 16)
@@ -67,7 +89,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_imgb4")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -85,7 +107,17 @@ centered = false
 region_enabled = true
 region_rect = Rect2(16, 1, 16, 15)
 
+[node name="seagull2" type="AnimatedSprite2D" parent="." unique_id=491773352]
+position = Vector2(18, 0)
+sprite_frames = SubResource("SpriteFrames_fxwi0")
+animation = &"idle"
+autoplay = "idle"
+frame = 1
+frame_progress = 0.54886943
+centered = false
+
 [node name="burger" type="AnimatedSprite2D" parent="." unique_id=886144762]
+position = Vector2(36, 0)
 sprite_frames = SubResource("SpriteFrames_i37fe")
 animation = &"idle"
 autoplay = "idle"
@@ -93,13 +125,15 @@ frame_progress = 0.84041256
 centered = false
 
 [node name="fish" type="AnimatedSprite2D" parent="." unique_id=2004066684]
+position = Vector2(55, 0)
 sprite_frames = SubResource("SpriteFrames_ef3uy")
 animation = &"idle"
 autoplay = "idle"
 centered = false
 
 [node name="drone" type="AnimatedSprite2D" parent="." unique_id=1494277333]
+position = Vector2(1, 17)
 sprite_frames = SubResource("SpriteFrames_ir6nd")
-frame = 1
-frame_progress = 0.11490487
+animation = &"idle"
+autoplay = "idle"
 centered = false
