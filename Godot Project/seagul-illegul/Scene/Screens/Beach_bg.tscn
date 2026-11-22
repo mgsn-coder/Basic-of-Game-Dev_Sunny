@@ -94,6 +94,7 @@ animations = [{
 }]
 
 [node name="Beach_BG" type="CanvasLayer" unique_id=1817198883]
+follow_viewport_enabled = true
 
 [node name="beach background" type="Sprite2D" parent="." unique_id=814227672]
 texture_repeat = 2
