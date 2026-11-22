@@ -1,17 +1,17 @@
-[gd_scene format=3 uid="uid://bvdnlfx0fuky3"]
+[gd_scene format=3 uid="uid://c44nteexuavqe"]
 
-[ext_resource type="Script" uid="uid://cre6mp8xryvmc" path="res://Scripts/world.gd" id="1_dlwip"]
-[ext_resource type="PackedScene" uid="uid://dxumrnjw1un1t" path="res://Scene/Player.tscn" id="1_emx41"]
-[ext_resource type="PackedScene" uid="uid://v333ccay1du7" path="res://Scene/oreange.tscn" id="2_scul4"]
-[ext_resource type="PackedScene" uid="uid://bkjbwy5bgb8jq" path="res://Scene/pear.tscn" id="3_pcvp0"]
-[ext_resource type="PackedScene" uid="uid://dj88jw8vrenm7" path="res://Scene/grape.tscn" id="4_pcvp0"]
-[ext_resource type="PackedScene" uid="uid://b2arckombvats" path="res://Scene/enemy_2.tscn" id="6_6a5p4"]
-[ext_resource type="FontFile" uid="uid://t2vapru5go5k" path="res://Asset/fonts/PixelOperator8-Bold.ttf" id="6_37axr"]
-[ext_resource type="PackedScene" uid="uid://g6bjhq20jkpi" path="res://Scene/game_over_scene.tscn" id="7_nka0b"]
-[ext_resource type="Script" uid="uid://tsbm6jarxrtr" path="res://Scripts/game_manager.gd" id="7_ol2hl"]
-[ext_resource type="Texture2D" uid="uid://dcwxwtjrfw5pu" path="res://Asset/Backgrounds/blue.png" id="8_h7cfj"]
-[ext_resource type="Texture2D" uid="uid://bglhcqa8p7bu8" path="res://Asset/PNG/Effects/star1.png" id="9_h7cfj"]
-[ext_resource type="PackedScene" uid="uid://bemvtv6amsepo" path="res://Scene/enemy.tscn" id="10_y56vo"]
+[ext_resource type="Script" uid="uid://cre6mp8xryvmc" path="res://Scripts/world.gd" id="1_nje14"]
+[ext_resource type="PackedScene" uid="uid://v333ccay1du7" path="res://Scene/Objects/oreange.tscn" id="2_6hpo1"]
+[ext_resource type="PackedScene" uid="uid://bkjbwy5bgb8jq" path="res://Scene/Objects/pear.tscn" id="3_ac76g"]
+[ext_resource type="PackedScene" uid="uid://dj88jw8vrenm7" path="res://Scene/Objects/grape.tscn" id="4_a6a61"]
+[ext_resource type="PackedScene" uid="uid://bemvtv6amsepo" path="res://Scene/Objects/enemy.tscn" id="5_d3jyj"]
+[ext_resource type="PackedScene" uid="uid://b2arckombvats" path="res://Scene/Objects/enemy_2.tscn" id="6_uf7b4"]
+[ext_resource type="PackedScene" uid="uid://g6bjhq20jkpi" path="res://Scene/Screens/game_over_scene.tscn" id="7_qmow2"]
+[ext_resource type="Script" uid="uid://tsbm6jarxrtr" path="res://Scripts/game_manager.gd" id="8_ba23h"]
+[ext_resource type="FontFile" uid="uid://t2vapru5go5k" path="res://Asset/fonts/PixelOperator8-Bold.ttf" id="9_vncuc"]
+[ext_resource type="PackedScene" uid="uid://dxumrnjw1un1t" path="res://Scene/Player.tscn" id="10_melda"]
+[ext_resource type="Texture2D" uid="uid://dcwxwtjrfw5pu" path="res://Asset/Backgrounds/blue.png" id="11_hronc"]
+[ext_resource type="Texture2D" uid="uid://bglhcqa8p7bu8" path="res://Asset/PNG/Effects/star1.png" id="12_0w6s7"]
 
 [sub_resource type="Animation" id="Animation_6a5p4"]
 length = 0.001
@@ -62,21 +62,50 @@ scale_min = 0.01
 scale_max = 0.099999994
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i37fe"]
-size = Vector2(254, 10)
+size = Vector2(147.5, 10)
 
 [node name="world" type="Node2D" unique_id=908174599]
-script = ExtResource("1_dlwip")
-food_scenes = Array[PackedScene]([ExtResource("2_scul4"), ExtResource("3_pcvp0"), ExtResource("4_pcvp0")])
-enemy_scenes = Array[PackedScene]([ExtResource("10_y56vo"), ExtResource("6_6a5p4")])
+script = ExtResource("1_nje14")
+food_scenes = Array[PackedScene]([ExtResource("2_6hpo1"), ExtResource("3_ac76g"), ExtResource("4_a6a61")])
+enemy_scenes = Array[PackedScene]([ExtResource("5_d3jyj"), ExtResource("6_uf7b4")])
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=491196090]
 
-[node name="GameOverScene" parent="UILayer" unique_id=356306805 instance=ExtResource("7_nka0b")]
+[node name="GameOverScene" parent="UILayer" unique_id=356306805 instance=ExtResource("7_qmow2")]
 visible = false
+
+[node name="EndScore" type="Label" parent="UILayer/GameOverScene" unique_id=728935652]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+offset_right = 8.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("9_vncuc")
+theme_override_font_sizes/font_size = 8
+text = "0"
+vertical_alignment = 2
+
+[node name="HighScore" type="Label" parent="UILayer/GameOverScene" unique_id=784704470]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("9_vncuc")
+theme_override_font_sizes/font_size = 8
+text = "0"
+vertical_alignment = 2
 
 [node name="GameManager" type="Node" parent="." unique_id=1083365599]
 unique_name_in_owner = true
-script = ExtResource("7_ol2hl")
+script = ExtResource("8_ba23h")
 
 [node name="Score" type="Label" parent="GameManager" unique_id=1579296924]
 unique_name_in_owner = true
@@ -84,9 +113,20 @@ offset_left = 3.0
 offset_top = 3.0
 offset_right = 81.0
 offset_bottom = 26.0
-theme_override_fonts/font = ExtResource("6_37axr")
+theme_override_fonts/font = ExtResource("9_vncuc")
 theme_override_font_sizes/font_size = 8
 text = "score : 0"
+
+[node name="Hunger" type="Label" parent="GameManager" unique_id=1739687416]
+unique_name_in_owner = true
+offset_left = 161.0
+offset_top = 3.0
+offset_right = 239.0
+offset_bottom = 26.0
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("9_vncuc")
+theme_override_font_sizes/font_size = 8
+text = "Hunger : 0"
 
 [node name="control" type="Label" parent="GameManager" unique_id=1615173031]
 anchors_preset = 8
@@ -101,7 +141,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.46024692, 0.4783178, 0.53253055, 1)
-theme_override_fonts/font = ExtResource("6_37axr")
+theme_override_fonts/font = ExtResource("9_vncuc")
 theme_override_font_sizes/font_size = 4
 text = "control: ASWD/ARROWS"
 horizontal_alignment = 1
@@ -111,19 +151,19 @@ offset_left = 55.0
 offset_top = 142.0
 offset_right = 95.0
 offset_bottom = 165.0
-theme_override_fonts/font = ExtResource("6_37axr")
+theme_override_fonts/font = ExtResource("9_vncuc")
 theme_override_font_sizes/font_size = 6
 horizontal_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="GameManager/PopupPoint" unique_id=609324723]
 libraries/ = SubResource("AnimationLibrary_0gfnl")
 
-[node name="Player" parent="." unique_id=1819413524 instance=ExtResource("1_emx41")]
+[node name="Player" parent="." unique_id=1819413524 instance=ExtResource("10_melda")]
 unique_name_in_owner = true
 position = Vector2(28, 35)
 
 [node name="PlayerSpawnPos" type="Marker2D" parent="." unique_id=266284616]
-position = Vector2(80, 200)
+position = Vector2(120, 25)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1484488877]
 
@@ -132,7 +172,8 @@ motion_mirroring = Vector2(0, 240)
 
 [node name="PurpleStars" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=832718867]
 texture_repeat = 2
-texture = ExtResource("8_h7cfj")
+scale = Vector2(1.4999999, 0.74999994)
+texture = ExtResource("11_hronc")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 160, 240)
@@ -140,26 +181,27 @@ region_rect = Rect2(0, 0, 160, 240)
 [node name="StarsParticleEffect" type="GPUParticles2D" parent="." unique_id=1793379238]
 position = Vector2(83, 36)
 amount = 50
-texture = ExtResource("9_h7cfj")
+texture = ExtResource("12_0w6s7")
 process_material = SubResource("ParticleProcessMaterial_fxwi0")
 
 [node name="WorldBoundary" type="StaticBody2D" parent="." unique_id=1811674723]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary" unique_id=1158317575]
-position = Vector2(81, 240)
+position = Vector2(122, 188)
 shape = SubResource("RectangleShape2D_i37fe")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldBoundary" unique_id=1486775717]
-position = Vector2(81, 0)
+position = Vector2(124, -5)
 shape = SubResource("RectangleShape2D_i37fe")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="WorldBoundary" unique_id=658077689]
-position = Vector2(1, 121)
+position = Vector2(-12, 97)
 rotation = -1.5707964
 shape = SubResource("RectangleShape2D_i37fe")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="WorldBoundary" unique_id=569461120]
-position = Vector2(161, 121)
+position = Vector2(245, 90.5)
 rotation = -1.5707964
 shape = SubResource("RectangleShape2D_i37fe")
 

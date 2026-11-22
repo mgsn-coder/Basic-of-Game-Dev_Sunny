@@ -34,12 +34,13 @@ func _process(_delta: float) -> void:
 		#print(timer.wait_time) for checking the decreasing timeer
 	elif food_timer.wait_time < 0.5:
 		food_timer.wait_time = 0.5
-	
+	'''
 	if enemy_timer.wait_time > 0.5:
 		enemy_timer.wait_time -= _delta * 0.005
 		#print(timer.wait_time) for checking the decreasing timeer
 	elif enemy_timer.wait_time < 0.5:
 		enemy_timer.wait_time = 0.5
+	'''
 	
 	#scrolling background
 	pb.scroll_offset.y += _delta * scroll_speed #increase scrooll_offset each frame
@@ -49,16 +50,23 @@ func _process(_delta: float) -> void:
 	#print(pb.scroll_offset.y) check the number here
 
 func _on_food_spawn_timer_timeout() -> void:
+	if !player:
+		return
 	var f = food_scenes.pick_random().instantiate() #create new food
-	f.global_position = Vector2(randf_range(40,140),-10) #set position
+	if player.direction == 1:
+		f.global_position = Vector2(0,randf_range(25,180)) #set position
+		f.direction = -1
+	else:
+		f.global_position = Vector2(250,randf_range(25,180)) #set position
+		f.direction = 1
 	f.game_manager = $GameManager #connect it to GameManager
 	food_container.add_child(f) #add it as a child of the scene
 
 
-func _on_enemy_spawn_timer_timeout() -> void:
-	var e = enemy_scenes.pick_random().instantiate()
-	e.global_position = Vector2(randf_range(40,120),-10)
-	e.game_manager = $GameManager
-	enemy_container.add_child(e) 
+#func _on_enemy_spawn_timer_timeout() -> void:
+#	var e = enemy_scenes.pick_random().instantiate()
+#	e.global_position = Vector2(randf_range(40,120),-10)
+#	e.game_manager = $GameManager
+#	enemy_container.add_child(e) 
 	
 	
