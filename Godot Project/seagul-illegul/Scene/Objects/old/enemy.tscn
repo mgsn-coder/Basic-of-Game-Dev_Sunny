@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bemvtv6amsepo"]
 
-[ext_resource type="Script" uid="uid://b52b3sk1wtbk3" path="res://Scripts/enemy.gd" id="1_4jekx"]
+[ext_resource type="Script" uid="uid://b52b3sk1wtbk3" path="res://Scripts/old/enemy.gd" id="1_4jekx"]
 [ext_resource type="Texture2D" uid="uid://d0hheuwf7dkyt" path="res://Asset/fruit.png" id="2_s685e"]
 [ext_resource type="AudioStream" uid="uid://c5g5vxwepx3l8" path="res://Asset/sounds/hurt.wav" id="3_s685e"]
 

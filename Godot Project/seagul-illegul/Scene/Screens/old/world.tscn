@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://bvdnlfx0fuky3"]
+
+[ext_resource type="Texture2D" uid="uid://cmsnt2vkt5g1j" path="res://Asset/Seagull/Beach.png" id="1_a8h4e"]
+[ext_resource type="Texture2D" uid="uid://dh14v8th12e1x" path="res://Asset/Seagull/Seagull actual size.PNG" id="2_jnb6c"]
+[ext_resource type="Texture2D" uid="uid://dyfwemrwiq12n" path="res://Asset/Seagull/food.PNG" id="3_oa7mg"]
+[ext_resource type="Texture2D" uid="uid://cia8mk1uh83o0" path="res://Asset/Seagull/drone.PNG" id="4_qtqnb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f80fy"]
+atlas = ExtResource("2_jnb6c")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yb4la"]
+atlas = ExtResource("2_jnb6c")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fxwi0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f80fy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yb4la")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11qw1"]
+atlas = ExtResource("3_oa7mg")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_im8j5"]
+atlas = ExtResource("3_oa7mg")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i37fe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11qw1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_im8j5")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owy0o"]
+atlas = ExtResource("3_oa7mg")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qssi"]
+atlas = ExtResource("3_oa7mg")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ef3uy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owy0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qssi")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgs8j"]
+atlas = ExtResource("4_qtqnb")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imgb4"]
+atlas = ExtResource("4_qtqnb")
+region = Rect2(0, 16, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ir6nd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgs8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imgb4")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Beach_BG" type="CanvasLayer" unique_id=1817198883]
+follow_viewport_enabled = true
+
+[node name="beach background" type="Sprite2D" parent="." unique_id=814227672]
+texture_repeat = 2
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_a8h4e")
+centered = false
+
+[node name="seagull" type="Sprite2D" parent="." unique_id=762700648]
+texture = ExtResource("2_jnb6c")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 1, 16, 15)
+
+[node name="seagull2" type="AnimatedSprite2D" parent="." unique_id=491773352]
+position = Vector2(18, 0)
+sprite_frames = SubResource("SpriteFrames_fxwi0")
+animation = &"idle"
+autoplay = "idle"
+frame = 1
+frame_progress = 0.54886943
+centered = false
+
+[node name="burger" type="AnimatedSprite2D" parent="." unique_id=886144762]
+position = Vector2(36, 0)
+sprite_frames = SubResource("SpriteFrames_i37fe")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.84041256
+centered = false
+
+[node name="fish" type="AnimatedSprite2D" parent="." unique_id=2004066684]
+position = Vector2(55, 0)
+sprite_frames = SubResource("SpriteFrames_ef3uy")
+animation = &"idle"
+autoplay = "idle"
+centered = false
+
+[node name="drone" type="AnimatedSprite2D" parent="." unique_id=1494277333]
+position = Vector2(1, 17)
+sprite_frames = SubResource("SpriteFrames_ir6nd")
+animation = &"idle"
+autoplay = "idle"
+centered = false

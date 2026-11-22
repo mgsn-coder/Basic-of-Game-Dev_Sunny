@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://v333ccay1du7"]
 
-[ext_resource type="Script" uid="uid://c1rqcn6juvhi2" path="res://Scripts/orange.gd" id="1_d3itu"]
+[ext_resource type="Script" uid="uid://c1rqcn6juvhi2" path="res://Scripts/old/orange.gd" id="1_d3itu"]
 [ext_resource type="Texture2D" uid="uid://d0hheuwf7dkyt" path="res://Asset/fruit.png" id="1_o21ps"]
 [ext_resource type="AudioStream" uid="uid://w8jeasygvckk" path="res://Asset/sounds/coin.wav" id="3_otnjl"]
 
