@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://5o2o1pcey3f0"]
 
-[ext_resource type="Texture2D" uid="uid://dedi74r1jvvkj" path="res://Asset/Backgrounds/purple.png" id="1_l8g4q"]
+[ext_resource type="Texture2D" uid="uid://cmsnt2vkt5g1j" path="res://Asset/Seagull/Beach.png" id="1_40x51"]
 
 [node name="Beach_BG" type="ParallaxBackground" unique_id=163114552]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=2124553231]
-motion_scale = Vector2(0.6, 1)
-motion_mirroring = Vector2(256, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer" unique_id=814227672]
 texture_repeat = 2
-texture = ExtResource("1_l8g4q")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_40x51")
 centered = false
