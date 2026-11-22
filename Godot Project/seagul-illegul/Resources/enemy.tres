@@ -1,5 +1,0 @@
-[gd_resource type="Resource" format=3 uid="uid://dode7qqe1qoy5"]
-
-[resource]
-resource_name = "Enemy"
-metadata/damage = [1, 2, 3]
