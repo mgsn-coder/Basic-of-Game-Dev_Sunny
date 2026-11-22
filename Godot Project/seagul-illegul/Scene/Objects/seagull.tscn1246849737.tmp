@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dcpuj1mu5yawu"]
+
+[ext_resource type="Script" uid="uid://bi4uxlaa83770" path="res://Scripts/seagull.gd" id="1_brub5"]
+[ext_resource type="Texture2D" uid="uid://dh14v8th12e1x" path="res://Asset/Seagull/Seagull actual size.PNG" id="2_ykjgk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mud5u"]
+atlas = ExtResource("2_ykjgk")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvocf"]
+atlas = ExtResource("2_ykjgk")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fxwi0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mud5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvocf")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ey6sf"]
+size = Vector2(14, 13)
+
+[node name="Player" type="CharacterBody2D" unique_id=1819413524]
+collision_layer = 2
+motion_mode = 1
+script = ExtResource("1_brub5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=862445514]
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_fxwi0")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.75647646
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1427470469]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_ey6sf")
+
+[node name="Timer" type="Timer" parent="." unique_id=758930428]
+wait_time = 0.6
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

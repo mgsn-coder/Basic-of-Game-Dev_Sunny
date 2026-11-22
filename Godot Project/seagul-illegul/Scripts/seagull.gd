@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 #ENI Note: testing if a resource file can store the const matters.
-@onready var SEAGULL = preload("res://Resources/seagull.tres").instantiate()
+const SEAGULL = preload("res://Resources/seagull.tres")
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 #ENI Note: dynamic variables
@@ -47,11 +47,13 @@ func get_input():
 	var altitude_fix: float = 0
 	if Input.is_action_pressed("move_back"):
 		altitude_fix = current_speed
-	elif position.y > get_viewport().get_visible_rect().size.y: #ENI Note: hopefully this checks the bottom of the screen.
+		if position.y + altitude_fix >= get_viewport().get_visible_rect().size.x:
+			altitude_fix = get_viewport().get_visible_rect().size.x - position.y
+	elif position.y > SEAGULL.height: #ENI Note: hopefully this checks the bottom of the screen.
 		var temp_altitude_fix = current_speed * -1
-		var low_height: = get_viewport().get_visible_rect().size.y;
-		if position.y + temp_altitude_fix < low_height:
-			temp_altitude_fix = low_height - position.y
+		var top_height: = SEAGULL.height;
+		if position.y + temp_altitude_fix < top_height:
+			temp_altitude_fix = top_height - position.y
 		altitude_fix = temp_altitude_fix
 		#too_low_penaly() TODO: fix a proper hunger penalty according to the zones
 		altitude_penalty += 1
@@ -61,11 +63,11 @@ func get_input():
 	position.y += altitude_fix
 
 func change_direction():
-	if position.x >= 240: #TODO: fix this to be connected to the viewport size
+	if position.x >= get_viewport().get_visible_rect().size.x: #TODO: fix this to be connected to the viewport size
 		animated_sprite_2d.flip_h = false
 		direction *= -1
 		current_hunger -= 1
-		position.x = 239 #TODO: fix this to actually have a size based bouncing
+		position.x = get_viewport().get_visible_rect().size.x #TODO: fix this to actually have a size based bouncing
 	if position.x <= 0: #TODO: fix this to be connected to the viewport size
 		animated_sprite_2d.flip_h = true
 		direction *= -1
