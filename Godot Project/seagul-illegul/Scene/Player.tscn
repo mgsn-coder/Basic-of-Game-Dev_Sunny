@@ -2,18 +2,56 @@
 
 [ext_resource type="Texture2D" uid="uid://br0csy8qprstr" path="res://Asset/seagull-soaring-gracefully-above-coastal-waters-wildlife-photography-serene-atmosphere-aerial-view-png.webp" id="1_3eeal"]
 [ext_resource type="Script" uid="uid://bjv51k18kojle" path="res://Scripts/player.gd" id="2_3eeal"]
+[ext_resource type="Texture2D" uid="uid://dh14v8th12e1x" path="res://Asset/Seagull/Seagull actual size.PNG" id="2_jvxg0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mud5u"]
+atlas = ExtResource("2_jvxg0")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvocf"]
+atlas = ExtResource("2_jvxg0")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fxwi0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mud5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvocf")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fxwi0"]
+radius = 2.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1819413524]
 collision_layer = 2
 motion_mode = 1
 script = ExtResource("2_3eeal")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1684614493]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=862445514]
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_fxwi0")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.99961877
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1427470469]
+shape = SubResource("CircleShape2D_fxwi0")
+
+[node name="Sprite2D__old" type="Sprite2D" parent="." unique_id=1684614493]
+visible = false
 position = Vector2(0, -2)
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("1_3eeal")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=776647878]
+[node name="CollisionPolygon2D_old" type="CollisionPolygon2D" parent="." unique_id=776647878]
+visible = false
 polygon = PackedVector2Array(-18, 0, -13, 1, 0, 1, 1, 2, -1, 4, 4, 6, 7, 2, 3, 1, 3, 0, 15, -7, 17, -10, 8, -7, 2, -3, -2, -3, -3, -2, -9, -2)
 
 [node name="Timer" type="Timer" parent="." unique_id=758930428]
