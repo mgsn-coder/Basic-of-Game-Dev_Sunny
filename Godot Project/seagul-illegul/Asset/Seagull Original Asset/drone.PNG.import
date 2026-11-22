@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bps448ogjgvo3"
-path="res://.godot/imported/Seagull big size.PNG-9e9daa9b07a9c44c5e66747bef268784.ctex"
+uid="uid://bn2ce5tuxny6c"
+path="res://.godot/imported/drone.PNG-30c5533229632522b30a0c28b15970bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/Seagull/Seagull big size.PNG"
-dest_files=["res://.godot/imported/Seagull big size.PNG-9e9daa9b07a9c44c5e66747bef268784.ctex"]
+source_file="res://Asset/Seagull Original Asset/drone.PNG"
+dest_files=["res://.godot/imported/drone.PNG-30c5533229632522b30a0c28b15970bd.ctex"]
 
 [params]
 
