@@ -9,9 +9,9 @@
 [ext_resource type="FontFile" uid="uid://t2vapru5go5k" path="res://Asset/fonts/PixelOperator8-Bold.ttf" id="6_37axr"]
 [ext_resource type="PackedScene" uid="uid://g6bjhq20jkpi" path="res://Scene/Screens/game_over_scene.tscn" id="7_nka0b"]
 [ext_resource type="Script" uid="uid://tsbm6jarxrtr" path="res://Scripts/game_manager.gd" id="7_ol2hl"]
-[ext_resource type="Texture2D" uid="uid://dcwxwtjrfw5pu" path="res://Asset/Backgrounds/blue.png" id="8_h7cfj"]
 [ext_resource type="Texture2D" uid="uid://bglhcqa8p7bu8" path="res://Asset/PNG/Effects/star1.png" id="9_h7cfj"]
 [ext_resource type="PackedScene" uid="uid://bemvtv6amsepo" path="res://Scene/Objects/enemy.tscn" id="10_y56vo"]
+[ext_resource type="Texture2D" uid="uid://dedi74r1jvvkj" path="res://Asset/Backgrounds/purple.png" id="11_a3pql"]
 
 [sub_resource type="Animation" id="Animation_6a5p4"]
 length = 0.001
@@ -147,11 +147,12 @@ position = Vector2(80, 200)
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1484488877]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=658725864]
+texture_repeat = 2
 motion_mirroring = Vector2(0, 240)
 
 [node name="PurpleStars" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=832718867]
 texture_repeat = 2
-texture = ExtResource("8_h7cfj")
+texture = ExtResource("11_a3pql")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 160, 240)

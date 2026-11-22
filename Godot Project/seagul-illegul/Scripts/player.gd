@@ -14,7 +14,7 @@ var altitude_penalty: int = 0
 
 var flying_speed := 100.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-#@onready var sprite_2d: Sprite2D = $Sprite2D
+#@onready var sprite_2d: Sprite2D = $Sprite2D  ->replaced with animated_sprite_2d
 @onready var respawn_timer: Timer = $Timer
 @onready var gos: Control = $"../UILayer/GameOverScene"
 @export var ui_timer := 0.5
@@ -101,6 +101,25 @@ func change_direction():
 		current_hunger -= 1
 		game_manager.update_hunger(current_hunger)
 		position.x = 1 #TODO: fix this to actually have a size based bouncing
+
+'''
+
+	Sunny Notes : Old Code
+	func change_direction():
+		if position.x >= 240: #TODO: fix this to be connected to the viewport size
+			animated_sprite_2d = false
+			direction *= -1
+			current_hunger -= 1
+			game_manager.update_hunger(current_hunger)
+			position.x = 239 #TODO: fix this to actually have a size based bouncing
+		if position.x <= 0: #TODO: fix this to be connected to the viewport size
+			animated_sprite_2d = true
+			direction *= -1
+			current_hunger -= 1
+			game_manager.update_hunger(current_hunger)
+			position.x = 1 #TODO: fix this to actually have a size based bouncing
+
+'''
 
 func check_hunger():
 	if current_hunger < hungers[0]:
