@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://cffw3ynmk0fxn"]
 
+[ext_resource type="PackedScene" uid="uid://dhiubelsq7ckv" path="res://Scene/Systems/player_input.tscn" id="1_wm8as"]
+[ext_resource type="PackedScene" uid="uid://5o2o1pcey3f0" path="res://Scene/Screens/Beach_bg.tscn" id="1_y8eh7"]
+
 [node name="Level" type="Node2D" unique_id=299684066]
+
+[node name="beach background" parent="." unique_id=814227672 instance=ExtResource("1_y8eh7")]
+
+[node name="PlayerInput" parent="." unique_id=995797763 instance=ExtResource("1_wm8as")]
+position = Vector2(150, 32)

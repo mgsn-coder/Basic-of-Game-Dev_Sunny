@@ -50,32 +50,32 @@ func control_altitude(input_y: float = 0.0):
 		var temp_speed = current_speed_x
 		if temp_speed < 0.0:
 			temp_speed *= -1
-		if position.y + temp_speed >= get_viewport().get_visible_rect().size.y:
-			temp_speed = get_viewport().get_visible_rect().size.y - position.y
+		if global_position.y + temp_speed >= get_viewport().get_visible_rect().size.y:
+			temp_speed = get_viewport().get_visible_rect().size.y - global_position.y
 		current_speed_y = temp_speed
-	elif position.y > SEAGULL.height:
+	elif global_position.y > SEAGULL.height:
 		var temp_speed = current_speed_x
 		if temp_speed > 0.0:
 			temp_speed *= -1
-		if position.y + temp_speed <= SEAGULL.height:
-			temp_speed = SEAGULL.height - position.y
+		if global_position.y + temp_speed <= SEAGULL.height:
+			temp_speed = SEAGULL.height - global_position.y
 		current_speed_y = temp_speed
 
 func move_seagull():
-	position.x += current_speed_x * direction
-	position.y += current_speed_y
+	global_position.x += current_speed_x * direction
+	global_position.y += current_speed_y
 
 func change_direction():
-	if position.x >= get_viewport().get_visible_rect().size.x: #TODO: fix this to be connected to the viewport size
-		animated_sprite_2d.flip_h = false
-		direction *= -1
-		current_hunger -= 1
-		position.x = get_viewport().get_visible_rect().size.x #TODO: fix this to actually have a size based bouncing
-	if position.x <= 0: #TODO: fix this to be connected to the viewport size
+	if global_position.x >= get_viewport().get_visible_rect().size.x: #TODO: fix this to be connected to the viewport size
 		animated_sprite_2d.flip_h = true
 		direction *= -1
 		current_hunger -= 1
-		position.x = 1 #TODO: fix this to actually have a size based bouncing
+		global_position.x = get_viewport().get_visible_rect().size.x #TODO: fix this to actually have a size based bouncing
+	if global_position.x <= 0: #TODO: fix this to be connected to the viewport size
+		animated_sprite_2d.flip_h = false
+		direction *= -1
+		current_hunger -= 1
+		global_position.x = 1 #TODO: fix this to actually have a size based bouncing
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

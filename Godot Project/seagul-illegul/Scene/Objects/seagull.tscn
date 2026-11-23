@@ -34,7 +34,6 @@ motion_mode = 1
 script = ExtResource("1_brub5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=862445514]
-scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_fxwi0")
 animation = &"Idle"
 autoplay = "Idle"

@@ -9,6 +9,28 @@ script = ExtResource("1_yq6ly")
 [node name="Player1" parent="." unique_id=1819413524 instance=ExtResource("2_atroe")]
 unique_name_in_owner = true
 
+[node name="Player1_id" type="Label" parent="Player1" unique_id=759511724]
+offset_left = -5.0
+offset_top = -18.0
+offset_right = 5.0
+offset_bottom = -6.0
+theme_override_colors/font_color = Color(1, 0.11650002, 0.06999999, 1)
+theme_override_font_sizes/font_size = 8
+text = "P1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Player2" parent="." unique_id=533506872 instance=ExtResource("2_atroe")]
 unique_name_in_owner = true
 position = Vector2(40, 0)
+
+[node name="Player2_id" type="Label" parent="Player2" unique_id=1363232473]
+offset_left = -5.0
+offset_top = -18.0
+offset_right = 5.0
+offset_bottom = -6.0
+theme_override_colors/font_color = Color(0, 0.513455, 0.88563496, 1)
+theme_override_font_sizes/font_size = 8
+text = "P2"
+horizontal_alignment = 1
+vertical_alignment = 1
