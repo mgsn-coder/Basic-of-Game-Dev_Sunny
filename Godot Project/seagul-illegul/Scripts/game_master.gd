@@ -2,7 +2,7 @@
 ENI Note: this script is used for global variables and
 communication between scenes loaded different times.
 '''
-extends Object
+extends Node
 
 var high_scores: Array[int] = [0,0] #ENI Note: 1P Mode, 2P Mode
 var playing_2P_mode: bool = false; 
