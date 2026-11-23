@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://cfkd3racauy6x"]
+
+[ext_resource type="Script" uid="uid://qi0pyert7ac" path="res://Scripts/level_hud.gd" id="1_iny5c"]
+
+[node name="LevelHUD" type="Control" unique_id=228426119]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.125
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iny5c")
+metadata/_edit_use_anchors_ = true
+
+[node name="P1" type="VBoxContainer" parent="." unique_id=1093634903]
+layout_mode = 1
+offset_right = 160.0
+offset_bottom = 32.0
+
+[node name="Points" type="Label" parent="P1" unique_id=373267115]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "P1 points:"
+
+[node name="Hunger" type="Label" parent="P1" unique_id=1959706594]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "P1 Hunger:"
+
+[node name="HungerBar" type="ProgressBar" parent="P1/Hunger" unique_id=1336858269]
+layout_mode = 0
+offset_top = 16.0
+offset_right = 160.0
+offset_bottom = 20.0
+max_value = 10.0
+step = 0.0
+show_percentage = false
+
+[node name="P2" type="VBoxContainer" parent="." unique_id=1427834908]
+layout_mode = 0
+offset_left = 160.0
+offset_right = 320.0
+offset_bottom = 28.0
+
+[node name="Points" type="Label" parent="P2" unique_id=554727063]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "P2 points:"
+
+[node name="Hunger" type="Label" parent="P2" unique_id=2003803139]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "P2 Hunger:"
+
+[node name="HungerBar" type="ProgressBar" parent="P2/Hunger" unique_id=1411252369]
+layout_mode = 0
+offset_top = 16.0
+offset_right = 160.0
+offset_bottom = 20.0
+max_value = 10.0
+step = 0.0
+show_percentage = false

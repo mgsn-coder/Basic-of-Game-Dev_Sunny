@@ -53,12 +53,12 @@ func control_altitude(input_y: float = 0.0):
 		if global_position.y + temp_speed >= get_viewport().get_visible_rect().size.y:
 			temp_speed = get_viewport().get_visible_rect().size.y - global_position.y
 		current_speed_y = temp_speed
-	elif global_position.y > SEAGULL.height:
+	elif global_position.y > SEAGULL.height * 2:
 		var temp_speed = current_speed_x
 		if temp_speed > 0.0:
 			temp_speed *= -1
-		if global_position.y + temp_speed <= SEAGULL.height:
-			temp_speed = SEAGULL.height - global_position.y
+		if global_position.y + temp_speed <= SEAGULL.height * 2:
+			temp_speed = (SEAGULL.height * 2) - global_position.y
 		current_speed_y = temp_speed
 
 func move_seagull():
