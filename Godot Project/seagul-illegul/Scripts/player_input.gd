@@ -17,42 +17,33 @@ func get_input_1P():
 	this is how Vector2 vars are declared
 	'''
 	var input_map: Vector2 = Vector2(0,0)
-	if Input.is_action_pressed("move_right"):
+	if Input.is_action_pressed("move_right_1") || Input.is_action_pressed("move_right_2"):
 		input_map.x = 1
-		print("Player 1 Right")
-	elif Input.is_action_pressed("move_left"):
+	elif Input.is_action_pressed("move_left_1") || Input.is_action_pressed("move_left_2"):
 		input_map.x = -1
-		print("Player 1 Left")
 	player_1.control_speed(input_map.x)
-	if Input.is_action_pressed("move_back"):
+	if Input.is_action_pressed("move_back_1") || Input.is_action_pressed("move_back_2"):
 		input_map.y = -1
-		print("Player 1 Down")
 	player_1.control_altitude(input_map.y)
 
 func get_input_2P():
 	var input_map_1: Vector2 = Vector2(0,0)
 	var input_map_2: Vector2 = Vector2(0,0)
-	if Input.is_key_pressed(KEY_D):
+	if Input.is_action_pressed("move_right_2"):
 			input_map_2.x = 1
-			print("Player 2 Right")
-	elif Input.is_key_pressed(KEY_A):
+	elif Input.is_action_pressed("move_left_2"):
 			input_map_2.x = -1
-			print("Player 2 Left")
 	player_2.control_speed(input_map_2.x)
-	if Input.is_key_pressed(KEY_RIGHT):
+	if Input.is_action_pressed("move_right_1"):
 		input_map_1.x = 1
-		print("Player 1 Right")
-	elif Input.is_key_pressed(KEY_LEFT):
+	elif Input.is_action_pressed("move_left_1"):
 			input_map_1.x = -1
-			print("Player 1 Left")
 	player_1.control_speed(input_map_1.x)
-	if Input.is_key_pressed(KEY_S):
+	if Input.is_action_pressed("move_back_2"):
 		input_map_2.y = -1
-		print("Player 2 Down")
 	player_2.control_altitude(input_map_2.y)
-	if Input.is_key_pressed(KEY_DOWN):
+	if Input.is_action_pressed("move_back_1"):
 		input_map_1.y = -1
-		print("Player 1 Down")
 	player_1.control_altitude(input_map_1.y)
 	
 
