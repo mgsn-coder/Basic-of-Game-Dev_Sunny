@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Drone" format=3 uid="uid://cee80tvot05tl"]
+
+[ext_resource type="Script" uid="uid://p82wuc1mybsu" path="res://Resources/drone_resource.gd" id="1_wlq11"]
+
+[resource]
+script = ExtResource("1_wlq11")
+metadata/_custom_type_script = "uid://p82wuc1mybsu"

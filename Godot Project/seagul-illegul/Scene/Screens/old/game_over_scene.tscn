@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://g6bjhq20jkpi"]
 
 [ext_resource type="FontFile" uid="uid://t2vapru5go5k" path="res://Asset/fonts/PixelOperator8-Bold.ttf" id="1_cr80o"]
-[ext_resource type="Script" uid="uid://b1gatiyftkhm4" path="res://Scripts/game_over_scene.gd" id="1_ktqvf"]
+[ext_resource type="Script" uid="uid://b1gatiyftkhm4" path="res://Scripts/old/game_over_scene.gd" id="1_ktqvf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxwi0"]
 bg_color = Color(0.66, 0.38280004, 0.38280004, 1)

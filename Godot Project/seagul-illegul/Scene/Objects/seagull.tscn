@@ -34,14 +34,14 @@ motion_mode = 1
 script = ExtResource("1_brub5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=862445514]
-position = Vector2(0, -2)
+scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_fxwi0")
 animation = &"Idle"
 autoplay = "Idle"
 frame_progress = 0.75647646
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1427470469]
-position = Vector2(0, -1.5)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_ey6sf")
 
 [node name="Timer" type="Timer" parent="." unique_id=758930428]

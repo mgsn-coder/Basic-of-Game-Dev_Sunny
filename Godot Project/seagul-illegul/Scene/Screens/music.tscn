@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://duxc2mov3omiq"]
 
 [ext_resource type="AudioStream" uid="uid://dj8o33oogl0wi" path="res://Asset/music/time_for_adventure.mp3" id="1_kt2l4"]
-[ext_resource type="Script" uid="uid://bsyvkaoad8mah" path="res://Scene/Screens/high_score.gd" id="2_cqx6a"]
+[ext_resource type="Script" uid="uid://bsyvkaoad8mah" path="res://Scene/Screens/old/high_score.gd" id="2_cqx6a"]
 
 [node name="Music" type="AudioStreamPlayer2D" unique_id=1550214913]
 stream = ExtResource("1_kt2l4")
