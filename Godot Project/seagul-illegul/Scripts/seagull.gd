@@ -45,6 +45,7 @@ func control_speed(input_x: float = 0.0):
 			current_speed_x = temp_speed
 
 func control_altitude(input_y: float = 0.0):
+	current_speed_y = 0
 	if input_y != 0.0:
 		var temp_speed = current_speed_x
 		if temp_speed < 0.0:
@@ -61,7 +62,7 @@ func control_altitude(input_y: float = 0.0):
 		current_speed_y = temp_speed
 
 func move_seagull():
-	position.x += current_speed_x
+	position.x += current_speed_x * direction
 	position.y += current_speed_y
 
 func change_direction():
