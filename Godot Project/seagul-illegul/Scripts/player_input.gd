@@ -19,13 +19,45 @@ func get_input_1P():
 	var input_map: Vector2 = Vector2(0,0)
 	if Input.is_action_pressed("move_right"):
 		input_map.x = 1
+		print("Player 1 Right")
 	elif Input.is_action_pressed("move_left"):
 		input_map.x = -1
+		print("Player 1 Left")
 	player_1.control_speed(input_map.x)
 	if Input.is_action_pressed("move_back"):
 		input_map.y = -1
+		print("Player 1 Down")
 	player_1.control_altitude(input_map.y)
+
+func get_input_2P():
+	var input_map_1: Vector2 = Vector2(0,0)
+	var input_map_2: Vector2 = Vector2(0,0)
+	if Input.is_key_pressed(KEY_D):
+			input_map_2.x = 1
+			print("Player 2 Right")
+	elif Input.is_key_pressed(KEY_A):
+			input_map_2.x = -1
+			print("Player 2 Left")
+	player_2.control_speed(input_map_2.x)
+	if Input.is_key_pressed(KEY_RIGHT):
+		input_map_1.x = 1
+		print("Player 1 Right")
+	elif Input.is_key_pressed(KEY_LEFT):
+			input_map_1.x = -1
+			print("Player 1 Left")
+	player_1.control_speed(input_map_1.x)
+	if Input.is_key_pressed(KEY_S):
+		input_map_2.y = -1
+		print("Player 2 Down")
+	player_2.control_altitude(input_map_2.y)
+	if Input.is_key_pressed(KEY_DOWN):
+		input_map_1.y = -1
+		print("Player 1 Down")
+	player_1.control_altitude(input_map_1.y)
+	
 
 func _process(delta: float) -> void:
 	if !player_2.visible:
 		get_input_1P()
+	else:
+		get_input_2P()

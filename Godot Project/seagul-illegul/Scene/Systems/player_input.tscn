@@ -11,4 +11,4 @@ unique_name_in_owner = true
 
 [node name="Player2" parent="." unique_id=533506872 instance=ExtResource("2_atroe")]
 unique_name_in_owner = true
-visible = false
+position = Vector2(40, 0)
