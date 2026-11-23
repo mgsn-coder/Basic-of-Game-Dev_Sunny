@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://blha0kwgapyr1"]
 
-[ext_resource type="Texture2D" uid="uid://bps448ogjgvo3" path="res://Asset/Seagull/Seagull big size.PNG" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://wpynthr4ixtv" path="res://Asset/Seagull/PH_Logo.png" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://cmsnt2vkt5g1j" path="res://Asset/Seagull/Beach.png" id="1_7vrkn"]
 
 [node name="Main_Menu" type="Control" unique_id=1617697081]
 layout_mode = 3
@@ -10,14 +11,101 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="game\'s logo" type="TextureRect" parent="." unique_id=1756788976]
+[node name="Background" type="TextureRect" parent="." unique_id=1662271285]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -49.5
-offset_right = 49.5
-offset_bottom = 99.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7vrkn")
+expand_mode = 1
+
+[node name="PanelContainer" type="Panel" parent="." unique_id=20267975]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -93.5
+offset_right = 70.0
+offset_bottom = 93.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text Logo" type="Label" parent="PanelContainer" unique_id=589977420]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 17.0
+offset_bottom = 66.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "SEAGULL
+ILLEGAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="ColorRect" parent="PanelContainer/Text Logo" unique_id=1530725288]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 7.0
+offset_bottom = 112.5
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.43123907, 0.7916788, 0.9805847, 1)
+
+[node name="1 player" type="Button" parent="PanelContainer/Text Logo/PanelContainer" unique_id=1345226970]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 15.5
+offset_right = 92.0
+offset_bottom = 35.5
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 8
+text = "1 PLAYER"
+
+[node name="2 player" type="Button" parent="PanelContainer/Text Logo/PanelContainer" unique_id=718676112]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 42.5
+offset_right = 92.0
+offset_bottom = 62.5
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 8
+text = "2 PLAYER"
+
+[node name="credit" type="Button" parent="PanelContainer/Text Logo/PanelContainer" unique_id=1392314353]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 68.5
+offset_right = 92.0
+offset_bottom = 88.5
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 8
+text = "CREDITS"
+
+[node name="Image logo" type="TextureRect" parent="." unique_id=107284485]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.5
+offset_top = -74.0
+offset_right = 44.5
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_06t4h")
 expand_mode = 1

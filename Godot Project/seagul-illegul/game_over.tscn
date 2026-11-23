@@ -1,0 +1,193 @@
+[gd_scene format=3 uid="uid://dfaxmvj4tf74d"]
+
+[ext_resource type="Texture2D" uid="uid://dedi74r1jvvkj" path="res://Asset/Backgrounds/purple.png" id="1_yxx3c"]
+[ext_resource type="Texture2D" uid="uid://wpynthr4ixtv" path="res://Asset/Seagull/PH_Logo.png" id="2_ccer4"]
+
+[node name="Main_Menu" type="Control" unique_id=1617697081]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=1662271285]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yxx3c")
+expand_mode = 1
+
+[node name="PanelContainer" type="Panel" parent="." unique_id=20267975]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -93.5
+offset_right = 70.0
+offset_bottom = 93.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text Logo" type="Label" parent="PanelContainer" unique_id=589977420]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 11.5
+offset_bottom = 34.5
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="score container" type="Panel" parent="PanelContainer/Text Logo" unique_id=631353213]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 40.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Leader board" type="Label" parent="PanelContainer/Text Logo/score container" unique_id=378962926]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 2.0
+offset_bottom = 11.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 6
+text = "LEADER BOARD"
+horizontal_alignment = 1
+
+[node name="Name" type="Label" parent="PanelContainer/Text Logo/score container/Leader board" unique_id=1479111127]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 11.0
+offset_right = -70.0
+offset_bottom = 19.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 4
+text = "NAME"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="PanelContainer/Text Logo/score container/Leader board" unique_id=693370575]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 70.0
+offset_top = 11.0
+offset_bottom = 19.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 4
+text = "SCORE"
+horizontal_alignment = 1
+
+[node name="name" type="Label" parent="PanelContainer/Text Logo/score container/Leader board" unique_id=1964673166]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 2.1527777
+anchor_right = 0.4
+anchor_bottom = 6.7777777
+offset_top = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 4
+text = "1. name
+1. name
+1. name
+1. name"
+metadata/_edit_use_anchors_ = true
+
+[node name="score" type="Label" parent="PanelContainer/Text Logo/score container/Leader board" unique_id=1255736930]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.62857145
+anchor_top = 2.1111112
+anchor_right = 0.9285714
+anchor_bottom = 6.7777777
+offset_top = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 4
+text = "9999999999999
+9999999999999
+9999999999999
+9999999999999"
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelContainer" type="ColorRect" parent="PanelContainer/Text Logo" unique_id=1530725288]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 85.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.7236963, 0.64430124, 0.7575296, 1)
+
+[node name="main menu" type="Button" parent="PanelContainer/Text Logo/PanelContainer" unique_id=1345226970]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -21.0
+offset_right = 28.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 8
+text = "MAIN MENU"
+
+[node name="quit" type="Button" parent="PanelContainer/Text Logo/PanelContainer" unique_id=718676112]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = 4.0
+offset_right = 28.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 8
+text = "QUIT
+"
+
+[node name="Image logo" type="TextureRect" parent="." unique_id=107284485]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.5
+offset_top = -74.0
+offset_right = 44.5
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ccer4")
+expand_mode = 1
