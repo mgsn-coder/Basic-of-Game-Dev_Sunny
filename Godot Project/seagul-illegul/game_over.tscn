@@ -39,8 +39,8 @@ grow_vertical = 2
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 11.5
-offset_bottom = 34.5
+offset_top = 4.5
+offset_bottom = 27.5
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "GAME OVER"
@@ -52,79 +52,147 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 40.0
-offset_bottom = 85.0
+offset_top = 25.0
+offset_bottom = 93.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Leader board" type="Label" parent="PanelContainer/Text Logo/score container" unique_id=378962926]
+[node name="Results" type="Label" parent="PanelContainer/Text Logo/score container" unique_id=378962926]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 2.0
-offset_bottom = 11.0
+offset_top = 7.0
+offset_bottom = 16.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 6
-text = "LEADER BOARD"
+text = "RESULTS"
 horizontal_alignment = 1
 
-[node name="Name" type="Label" parent="PanelContainer/Text Logo/score container/Leader board" unique_id=1479111127]
+[node name="1P mode" type="Label" parent="PanelContainer/Text Logo/score container/Results" unique_id=1479111127]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 11.0
-offset_right = -70.0
-offset_bottom = 19.0
+offset_left = 36.0
+offset_top = 17.0
+offset_right = -34.0
+offset_bottom = 25.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 4
-text = "NAME"
+text = "1 PLAYER MODE"
 horizontal_alignment = 1
 
-[node name="Score" type="Label" parent="PanelContainer/Text Logo/score container/Leader board" unique_id=693370575]
+[node name="hi-score" type="Label" parent="PanelContainer/Text Logo/score container/Results/1P mode" unique_id=1287694891]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 70.0
-offset_top = 11.0
-offset_bottom = 19.0
+offset_left = 2.0
+offset_top = 8.0
+offset_right = -44.0
+offset_bottom = 16.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 4
-text = "SCORE"
+text = "HI-SCORE:"
+
+[node name="score" type="Label" parent="PanelContainer/Text Logo/score container/Results/1P mode" unique_id=1503449958]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 40.0
+offset_top = 8.0
+offset_right = -2.0
+offset_bottom = 16.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 4
+text = "XXXXXXXXXXX"
 horizontal_alignment = 1
 
-[node name="name" type="Label" parent="PanelContainer/Text Logo/score container/Leader board" unique_id=1964673166]
+[node name="current score" type="Label" parent="PanelContainer/Text Logo/score container/Results/1P mode" unique_id=2080332489]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.1
-anchor_top = 2.1527777
-anchor_right = 0.4
-anchor_bottom = 6.7777777
-offset_top = 3.0
-offset_bottom = 3.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 5.0
+offset_top = 16.0
+offset_right = -37.0
+offset_bottom = 24.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 4
-text = "1. name
-1. name
-1. name
-1. name"
-metadata/_edit_use_anchors_ = true
+text = "CURRENT SCORE: "
 
-[node name="score" type="Label" parent="PanelContainer/Text Logo/score container/Leader board" unique_id=1255736930]
+[node name="score2" type="Label" parent="PanelContainer/Text Logo/score container/Results/1P mode" unique_id=1065097421]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.62857145
-anchor_top = 2.1111112
-anchor_right = 0.9285714
-anchor_bottom = 6.7777777
-offset_top = 3.0
-offset_bottom = 3.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 40.0
+offset_top = 16.0
+offset_right = -2.0
+offset_bottom = 24.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 4
-text = "9999999999999
-9999999999999
-9999999999999
-9999999999999"
-metadata/_edit_use_anchors_ = true
+text = "XXXXXXXXXXX"
+horizontal_alignment = 1
+
+[node name="2P mode" type="Label" parent="PanelContainer/Text Logo/score container/Results" unique_id=693370575]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 36.0
+offset_top = 45.0
+offset_right = -34.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 4
+text = "2 PLAYER MODE"
+horizontal_alignment = 1
+
+[node name="P1" type="Label" parent="PanelContainer/Text Logo/score container/Results/2P mode" unique_id=143569039]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 2.0
+offset_top = 9.0
+offset_right = -44.0
+offset_bottom = 17.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 4
+text = "PLAYER 1:"
+
+[node name="score3" type="Label" parent="PanelContainer/Text Logo/score container/Results/2P mode" unique_id=408003044]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 40.0
+offset_top = 9.0
+offset_right = -2.0
+offset_bottom = 17.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 4
+text = "XXXXXXXXXXX"
+horizontal_alignment = 1
+
+[node name="P2" type="Label" parent="PanelContainer/Text Logo/score container/Results/2P mode" unique_id=872648633]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 2.0
+offset_top = 17.0
+offset_right = -40.0
+offset_bottom = 25.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 4
+text = "PLAYER 2:"
+
+[node name="score4" type="Label" parent="PanelContainer/Text Logo/score container/Results/2P mode" unique_id=797508233]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 40.0
+offset_top = 17.0
+offset_right = -2.0
+offset_bottom = 25.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 4
+text = "XXXXXXXXXXX"
+horizontal_alignment = 1
 
 [node name="PanelContainer" type="ColorRect" parent="PanelContainer/Text Logo" unique_id=1530725288]
 layout_mode = 1
@@ -132,8 +200,8 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 85.0
-offset_bottom = 145.0
+offset_top = 93.0
+offset_bottom = 153.0
 grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.7236963, 0.64430124, 0.7575296, 1)
