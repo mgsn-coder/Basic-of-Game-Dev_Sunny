@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dedi74r1jvvkj" path="res://Asset/Backgrounds/purple.png" id="1_yxx3c"]
 [ext_resource type="Texture2D" uid="uid://wpynthr4ixtv" path="res://Asset/Seagull/PH_Logo.png" id="2_ccer4"]
 
-[node name="Main_Menu" type="Control" unique_id=1617697081]
+[node name="Game_Over" type="Control" unique_id=1617697081]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -259,3 +259,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_ccer4")
 expand_mode = 1
+
+[connection signal="pressed" from="PanelContainer/Text Logo/PanelContainer/main menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="PanelContainer/Text Logo/PanelContainer/quit" to="." method="_on_quit_pressed"]
