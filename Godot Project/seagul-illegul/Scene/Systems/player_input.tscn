@@ -2,6 +2,19 @@
 
 [ext_resource type="Script" uid="uid://c7lklr3sygdo3" path="res://Scripts/player_input.gd" id="1_yq6ly"]
 [ext_resource type="PackedScene" uid="uid://dcpuj1mu5yawu" path="res://Scene/Objects/seagull.tscn" id="2_atroe"]
+[ext_resource type="Script" uid="uid://crmdcvibmunsw" path="res://Scripts/hunger_bar.gd" id="3_atroe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w0lsc"]
+bg_color = Color(0.8511877, 0.043283418, 0.09839175, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yq6ly"]
+bg_color = Color(0.003921569, 0.6117647, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_30nyf"]
+bg_color = Color(0.8509804, 0.043137256, 0.09803922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_atroe"]
+bg_color = Color(0.003921569, 0.6117647, 0, 1)
 
 [node name="PlayerInput" type="Node2D" unique_id=995797763]
 script = ExtResource("1_yq6ly")
@@ -20,6 +33,18 @@ text = "P1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="HungerBar" type="ProgressBar" parent="Player1" unique_id=86848116]
+offset_left = -6.0
+offset_top = 8.0
+offset_right = 7.0
+offset_bottom = 12.0
+theme_override_styles/background = SubResource("StyleBoxFlat_w0lsc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_yq6ly")
+max_value = 10.0
+step = 0.0
+show_percentage = false
+script = ExtResource("3_atroe")
+
 [node name="Player2" parent="." unique_id=533506872 instance=ExtResource("2_atroe")]
 unique_name_in_owner = true
 position = Vector2(40, 0)
@@ -34,3 +59,15 @@ theme_override_font_sizes/font_size = 8
 text = "P2"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HungerBar" type="ProgressBar" parent="Player2" unique_id=694505745]
+offset_left = -6.0
+offset_top = 8.0
+offset_right = 7.0
+offset_bottom = 12.0
+theme_override_styles/background = SubResource("StyleBoxFlat_30nyf")
+theme_override_styles/fill = SubResource("StyleBoxFlat_atroe")
+max_value = 10.0
+step = 0.0
+show_percentage = false
+script = ExtResource("3_atroe")

@@ -21,20 +21,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "P1 points:"
 
-[node name="Hunger" type="Label" parent="P1" unique_id=1959706594]
-layout_mode = 2
-theme_override_font_sizes/font_size = 8
-text = "P1 Hunger:"
-
-[node name="HungerBar" type="ProgressBar" parent="P1/Hunger" unique_id=1336858269]
-layout_mode = 0
-offset_top = 16.0
-offset_right = 160.0
-offset_bottom = 20.0
-max_value = 10.0
-step = 0.0
-show_percentage = false
-
 [node name="P2" type="VBoxContainer" parent="." unique_id=1427834908]
 layout_mode = 0
 offset_left = 160.0
@@ -45,17 +31,3 @@ offset_bottom = 28.0
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "P2 points:"
-
-[node name="Hunger" type="Label" parent="P2" unique_id=2003803139]
-layout_mode = 2
-theme_override_font_sizes/font_size = 8
-text = "P2 Hunger:"
-
-[node name="HungerBar" type="ProgressBar" parent="P2/Hunger" unique_id=1411252369]
-layout_mode = 0
-offset_top = 16.0
-offset_right = 160.0
-offset_bottom = 20.0
-max_value = 10.0
-step = 0.0
-show_percentage = false

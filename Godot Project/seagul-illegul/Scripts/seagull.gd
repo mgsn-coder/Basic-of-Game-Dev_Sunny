@@ -8,14 +8,13 @@ const SEAGULL = preload("res://Resources/seagull.tres")
 var current_speed_x: float = 0.0;
 var current_hunger: int = 0;
 var direction: float = 1.0;
-var points: int = 0;
 var current_speed_y: float = 0.0;
 var altitude_penalty: int = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	current_speed_x = (SEAGULL.speeds[0] + SEAGULL.speeds[1]) / 2;
-	current_hunger = (SEAGULL.hungers[0] + SEAGULL.hungers[1]) / 2;
+	current_hunger =  (SEAGULL.hungers[0] + SEAGULL.hungers[1]) / 2; # ENi Note: tested if works with randi() % 10 + 1
 
 func control_speed(input_x: float = 0.0):
 	if input_x != 0.0:
@@ -53,12 +52,12 @@ func control_altitude(input_y: float = 0.0):
 		if global_position.y + temp_speed >= get_viewport().get_visible_rect().size.y:
 			temp_speed = get_viewport().get_visible_rect().size.y - global_position.y
 		current_speed_y = temp_speed
-	elif global_position.y > SEAGULL.height * 2:
+	elif global_position.y > SEAGULL.height:
 		var temp_speed = current_speed_x
 		if temp_speed > 0.0:
 			temp_speed *= -1
-		if global_position.y + temp_speed <= SEAGULL.height * 2:
-			temp_speed = (SEAGULL.height * 2) - global_position.y
+		if global_position.y + temp_speed <= SEAGULL.height:
+			temp_speed = (SEAGULL.height) - global_position.y
 		current_speed_y = temp_speed
 
 func move_seagull():

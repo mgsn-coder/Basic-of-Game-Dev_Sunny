@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://cffw3ynmk0fxn"]
 
+[ext_resource type="Script" uid="uid://d4m308c6grv1p" path="res://Scripts/level_manager.gd" id="1_dk8al"]
 [ext_resource type="PackedScene" uid="uid://cfkd3racauy6x" path="res://Scene/Systems/level_hud.tscn" id="1_jed81"]
 [ext_resource type="PackedScene" uid="uid://dhiubelsq7ckv" path="res://Scene/Systems/player_input.tscn" id="1_wm8as"]
 [ext_resource type="PackedScene" uid="uid://5o2o1pcey3f0" path="res://Scene/Screens/Beach_bg.tscn" id="1_y8eh7"]
 
 [node name="Level" type="Node2D" unique_id=299684066]
+script = ExtResource("1_dk8al")
 
 [node name="beach background" parent="." unique_id=814227672 instance=ExtResource("1_y8eh7")]
 
