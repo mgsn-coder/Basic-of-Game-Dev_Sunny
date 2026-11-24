@@ -5,10 +5,15 @@ informs the correct Seagull.
 This way, the 1P can use both input methods while 2P divides them.
 Link to the inspiration:
 https://forum.godotengine.org/t/so-im-trying-to-make-a-script-that-controls-two-player-in-local-multiplayer/48286
+
+For hunger bar, recheck this
+https://gamedevacademy.org/progressbar-in-godot-complete-guide/
 '''
 extends Node2D
 @onready var player_1: CharacterBody2D = %Player1
 @onready var player_2: CharacterBody2D = %Player2
+@onready var hunger_bar_1: ProgressBar = $Player1/HungerBar
+@onready var hunger_bar_2: ProgressBar = $Player2/HungerBar
 
 func get_input_1P():
 	'''
@@ -47,8 +52,14 @@ func get_input_2P():
 	player_1.control_altitude(input_map_1.y)
 	
 
+func update_hungerbar():
+	hunger_bar_1.value = player_1.current_hunger
+	if player_2.visible:
+		hunger_bar_2.value = player_2.current_hunger
+
 func _process(delta: float) -> void:
 	if !player_2.visible:
 		get_input_1P()
 	else:
 		get_input_2P()
+	update_hungerbar()
