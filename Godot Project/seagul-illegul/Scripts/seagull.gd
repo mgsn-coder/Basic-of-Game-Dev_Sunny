@@ -8,7 +8,6 @@ const SEAGULL = preload("res://Resources/seagull.tres")
 var current_speed_x: float = 0.0;
 var current_hunger: int = 0;
 var direction: float = 1.0;
-var points: int = 0;
 var current_speed_y: float = 0.0;
 var altitude_penalty: int = 0;
 
