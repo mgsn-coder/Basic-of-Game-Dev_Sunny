@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://g6bjhq20jkpi"]
 
-[ext_resource type="Script" uid="uid://b1gatiyftkhm4" path="res://Scripts/old/game_over_scene.gd" id="1_hbpwc"]
+[ext_resource type="Script" uid="uid://b1gatiyftkhm4" path="res://Scripts/old/game_over.gd" id="1_hbpwc"]
 [ext_resource type="FontFile" uid="uid://t2vapru5go5k" path="res://Asset/fonts/PixelOperator8-Bold.ttf" id="2_6c8q4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxwi0"]
