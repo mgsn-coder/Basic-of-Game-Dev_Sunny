@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dpeqxycrxxhyk"]
+
+[ext_resource type="Script" uid="uid://bqix0tjpjc4q3" path="res://Scripts/fish.gd" id="1_2fpyu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_32ndw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y1hqu"]
+
+[node name="Fish" type="CharacterBody2D" unique_id=417690330]
+script = ExtResource("1_2fpyu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1610082365]
+sprite_frames = SubResource("SpriteFrames_32ndw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1411297129]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_y1hqu")
