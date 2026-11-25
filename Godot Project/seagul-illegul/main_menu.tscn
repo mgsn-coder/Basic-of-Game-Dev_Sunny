@@ -2,7 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://wpynthr4ixtv" path="res://Asset/Seagull/PH_Logo.png" id="1_06t4h"]
 [ext_resource type="Texture2D" uid="uid://cmsnt2vkt5g1j" path="res://Asset/Seagull/Beach.png" id="1_7vrkn"]
-[ext_resource type="Script" uid="uid://hdct8s6h57a3" path="res://main_menu.gd" id="1_fu7sn"]
+[ext_resource type="Script" uid="uid://b25j1qesdybky" path="res://Scripts/UI/1_player.gd" id="2_fu7sn"]
+[ext_resource type="Script" uid="uid://cy02k06jh3j3r" path="res://Scripts/UI/2_player.gd" id="3_jix8l"]
 
 [node name="Main_Menu" type="Control" unique_id=1617697081]
 layout_mode = 3
@@ -11,7 +12,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_fu7sn")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1662271285]
 layout_mode = 1
@@ -70,8 +70,11 @@ offset_right = 92.0
 offset_bottom = 35.5
 size_flags_horizontal = 4
 size_flags_vertical = 0
+focus_neighbor_top = NodePath("../credit")
+focus_neighbor_bottom = NodePath("../2 player")
 theme_override_font_sizes/font_size = 8
 text = "1 PLAYER"
+script = ExtResource("2_fu7sn")
 
 [node name="2 player" type="Button" parent="PanelContainer/Text Logo/PanelContainer" unique_id=718676112]
 layout_mode = 0
@@ -81,8 +84,11 @@ offset_right = 92.0
 offset_bottom = 62.5
 size_flags_horizontal = 4
 size_flags_vertical = 0
+focus_neighbor_top = NodePath("../1 player")
+focus_neighbor_bottom = NodePath("../credit")
 theme_override_font_sizes/font_size = 8
 text = "2 PLAYER"
+script = ExtResource("3_jix8l")
 
 [node name="credit" type="Button" parent="PanelContainer/Text Logo/PanelContainer" unique_id=1392314353]
 layout_mode = 0
@@ -92,6 +98,8 @@ offset_right = 92.0
 offset_bottom = 88.5
 size_flags_horizontal = 4
 size_flags_vertical = 0
+focus_neighbor_top = NodePath("../2 player")
+focus_neighbor_bottom = NodePath("../1 player")
 theme_override_font_sizes/font_size = 8
 text = "CREDITS"
 
@@ -113,3 +121,6 @@ texture = ExtResource("1_06t4h")
 expand_mode = 1
 
 [connection signal="pressed" from="PanelContainer/Text Logo/PanelContainer/1 player" to="." method="_on__player_pressed"]
+[connection signal="pressed" from="PanelContainer/Text Logo/PanelContainer/1 player" to="PanelContainer/Text Logo/PanelContainer/1 player" method="_on_pressed"]
+[connection signal="pressed" from="PanelContainer/Text Logo/PanelContainer/2 player" to="." method="_on__player_pressed"]
+[connection signal="pressed" from="PanelContainer/Text Logo/PanelContainer/2 player" to="PanelContainer/Text Logo/PanelContainer/2 player" method="_on_pressed"]
