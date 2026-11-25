@@ -16,6 +16,14 @@ func _ready() -> void:
 		player_input.get_child(1).visible = false
 		level_hud.get_child(1).visible = false
 
+func increase_point(body_name: String, current_point: int = 0):
+	#ENI Note: using match so I can learn Godot's way of switch cases and this could be expanded to 2+ game feature.
+	match body_name:
+		player_1.name:
+			points[0] += current_point
+		player_2.name:
+			points[1] += current_point
+
 func update_points():
 	level_hud.update_points(points)
 

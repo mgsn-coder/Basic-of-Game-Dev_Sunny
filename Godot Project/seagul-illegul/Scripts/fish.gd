@@ -11,6 +11,8 @@ var current_heal: int = 0;
 var current_point: int = 0;
 var starting_y: float = 0;
 
+var level_manager: Node2D = null
+
 func _init() -> void:
 	current_speed_y = randf_range(FISH.speeds[0], FISH.speeds[1])
 	current_heal = randi_range(FISH.heal_values[0], FISH.heal_values[1])
@@ -24,6 +26,7 @@ func _init() -> void:
 	#TODO: find a proper way to make the fish to understand the water layer
 	global_position.y = randf_range(150, 175)
 	starting_y = global_position.y
+	level_manager = $"."
 
 func move():
 	global_position.x += current_speed_x
@@ -33,7 +36,21 @@ func change_direction():
 	if global_position.y < 32:
 		global_position.y = 32
 		direction *= -1
+		
+func despawn_check():
+	if global_position.y == starting_y:
+		queue_free()
 
-func _process(delta: float) -> void:
+func update():
 	move()
-	change_direction()
+	if direction < 0:
+			change_direction()
+	else:
+		despawn_check()
+
+#ENi Note: recycled Sunny's previous code as I forgot how to make signal functions.
+func _on_body_entered(body: Node2D) -> void:
+	if body is Player:
+		body.increase_hunger(current_heal)
+		level_manager.increase_point(body.name,current_point)
+		queue_free()
