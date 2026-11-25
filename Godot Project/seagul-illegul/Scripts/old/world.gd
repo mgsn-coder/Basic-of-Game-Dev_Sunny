@@ -50,7 +50,7 @@ func _process(_delta: float) -> void:
 	#print(pb.scroll_offset.y) check the number here
 
 func _on_food_spawn_timer_timeout() -> void:
-	if !player:
+	if !player: # Sunny note: if no player -> player doesn't exist
 		return
 	var f = food_scenes.pick_random().instantiate() #create new food
 	if player.direction == 1:

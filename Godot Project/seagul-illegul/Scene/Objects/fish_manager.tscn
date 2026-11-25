@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://211sqq68xo5v"]
+
+[ext_resource type="Script" uid="uid://bl5gmwajuf0al" path="res://Scripts/fish_manager.gd" id="1_xi7at"]
+[ext_resource type="PackedScene" uid="uid://dpeqxycrxxhyk" path="res://Scene/Objects/fish.tscn" id="2_c5avb"]
+
+[node name="FishManager" type="Node2D" unique_id=239127926]
+script = ExtResource("1_xi7at")
+fish_template = ExtResource("2_c5avb")

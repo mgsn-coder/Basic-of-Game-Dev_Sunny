@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cfkd3racauy6x" path="res://Scene/Systems/level_hud.tscn" id="1_jed81"]
 [ext_resource type="PackedScene" uid="uid://dhiubelsq7ckv" path="res://Scene/Systems/player_input.tscn" id="1_wm8as"]
 [ext_resource type="PackedScene" uid="uid://5o2o1pcey3f0" path="res://Scene/Screens/Beach_bg.tscn" id="1_y8eh7"]
+[ext_resource type="PackedScene" uid="uid://211sqq68xo5v" path="res://Scene/Objects/fish_manager.tscn" id="5_e6hfy"]
 
 [node name="Level" type="Node2D" unique_id=299684066]
 script = ExtResource("1_dk8al")
@@ -19,3 +20,5 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="FishManager" parent="." unique_id=239127926 instance=ExtResource("5_e6hfy")]

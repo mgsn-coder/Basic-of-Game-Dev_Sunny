@@ -1,17 +1,16 @@
-[gd_scene format=3 uid="uid://dg2iaebfa8h82"]
+[gd_scene format=3 uid="uid://c1vac3fp30mys"]
 
-[ext_resource type="Script" uid="uid://bt7bj5syt222c" path="res://Scripts/drone.gd" id="1_pbc2g"]
-[ext_resource type="Texture2D" uid="uid://cia8mk1uh83o0" path="res://Asset/Seagull/drone.PNG" id="2_p2q2k"]
+[ext_resource type="Texture2D" uid="uid://r1tnvg6l60xb" path="res://Asset/Seagull/Burger.png" id="1_sig0y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nh2pa"]
-atlas = ExtResource("2_p2q2k")
-region = Rect2(0, 0, 32, 16)
+atlas = ExtResource("1_sig0y")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wa5be"]
-atlas = ExtResource("2_p2q2k")
-region = Rect2(0, 16, 32, 16)
+atlas = ExtResource("1_sig0y")
+region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_17613"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_a5evq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -26,16 +25,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ll71j"]
+size = Vector2(14, 14)
 
-[node name="Drone" type="CharacterBody2D" unique_id=236513463]
-script = ExtResource("1_pbc2g")
+[node name="burger" type="CharacterBody2D" unique_id=236513463]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=461585185]
-sprite_frames = SubResource("SpriteFrames_17613")
+sprite_frames = SubResource("SpriteFrames_a5evq")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.44350004
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1490647036]
-position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_ll71j")

@@ -22,7 +22,7 @@ func _ready() -> void:
 	level_manager = get_parent().get_parent()
 
 func control_speed(input_x: float = 0.0):
-	if input_x != 0.0:
+	if input_x != 0.0: #Sunny note: != = not equal
 		var temp_speed = current_speed_x
 		if input_x == direction: #ENI Note: player presses the same direction
 			temp_speed += SEAGULL.speed_interval

@@ -22,7 +22,7 @@ func _init() -> void:
 	elif my_point - my_heal > 0:
 		my_speed_x = my_point - my_heal
 	#TODO: make a proper sprite sheet for FISH alone so the width can be used
-	global_position.x = randf_range(32, get_viewport().get_visible_rect().size.y - 32)
+	global_position.x = randf_range(32, 320-16)
 	#TODO: find a proper way to make the fish to understand the water layer
 	global_position.y = randf_range(150, 175)
 	my_starting_y = global_position.y
@@ -41,7 +41,7 @@ func despawn_check():
 	if global_position.y == my_starting_y:
 		queue_free()
 
-func update():
+func _process(delta: float) -> void:
 	move()
 	if my_direction < 0:
 			change_direction()
