@@ -11,10 +11,15 @@ var direction: float = 1.0;
 var current_speed_y: float = 0.0;
 var altitude_penalty: int = 0;
 
+var level_manager: Node2D = null;
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	current_speed_x = (SEAGULL.speeds[0] + SEAGULL.speeds[1]) / 2;
-	current_hunger =  (SEAGULL.hungers[0] + SEAGULL.hungers[1]) / 2; # ENi Note: tested if works with randi() % 10 + 1
+	#ENI Note: using temp_calc to please Godot's "decimal reduction" warning with floating ints
+	var temp_calc = (float(SEAGULL.hungers[0]) + float(SEAGULL.hungers[1])) / 2; # ENi Note: tested if works with randi() % 10 + 1
+	current_hunger =  int(temp_calc)
+	level_manager = get_parent().get_parent()
 
 func control_speed(input_x: float = 0.0):
 	if input_x != 0.0:
@@ -60,6 +65,22 @@ func control_altitude(input_y: float = 0.0):
 			temp_speed = (SEAGULL.height) - global_position.y
 		current_speed_y = temp_speed
 
+func increase_hunger(heal_value: int = 0):
+	var temp_value = heal_value
+	if current_hunger + temp_value > SEAGULL.hungers[1]:
+		temp_value = SEAGULL.hungers[1] - current_hunger
+	current_hunger += temp_value
+
+func decrease_hunger(damage_value: int = 0):
+	var temp_value = damage_value
+	if current_hunger - temp_value < SEAGULL.hungers[0]:
+		temp_value = damage_value - current_hunger
+	current_hunger -= temp_value
+	
+func check_hunger():
+	if current_hunger <= 0:
+		print("Game Over signal missing.") #TODO: make a proper death scene
+
 func move_seagull():
 	global_position.x += current_speed_x * direction
 	global_position.y += current_speed_y
@@ -80,4 +101,4 @@ func change_direction():
 func _process(delta: float) -> void:
 	move_seagull()
 	change_direction()
-	#check_hunger() TODO: make a proper death scene
+	check_hunger() 

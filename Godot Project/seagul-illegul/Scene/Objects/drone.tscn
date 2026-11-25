@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c1vac3fp30mys"]
+
+[ext_resource type="Script" uid="uid://bt7bj5syt222c" path="res://Scripts/drone.gd" id="1_ll71j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_17613"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ll71j"]
+
+[node name="Drone" type="CharacterBody2D" unique_id=236513463]
+script = ExtResource("1_ll71j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=461585185]
+sprite_frames = SubResource("SpriteFrames_17613")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1490647036]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ll71j")
