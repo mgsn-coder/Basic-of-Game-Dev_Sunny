@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://wpynthr4ixtv" path="res://Asset/Seagull/PH_Logo.png" id="1_06t4h"]
 [ext_resource type="Texture2D" uid="uid://cmsnt2vkt5g1j" path="res://Asset/Seagull/Beach.png" id="1_7vrkn"]
-[ext_resource type="Script" uid="uid://hdct8s6h57a3" path="res://Scripts/UI/main_menu.gd" id="1_fu7sn"]
+[ext_resource type="Script" uid="uid://hdct8s6h57a3" path="res://main_menu.gd" id="1_fu7sn"]
 
 [node name="Main_Menu" type="Control" unique_id=1617697081]
 layout_mode = 3
@@ -111,3 +111,5 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_06t4h")
 expand_mode = 1
+
+[connection signal="pressed" from="PanelContainer/Text Logo/PanelContainer/1 player" to="." method="_on__player_pressed"]

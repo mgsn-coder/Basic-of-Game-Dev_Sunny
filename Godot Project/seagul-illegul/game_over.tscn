@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dfaxmvj4tf74d"]
 
+[ext_resource type="Script" uid="uid://ckieghtm82e" path="res://Scripts/UI/game_over.gd" id="1_ccer4"]
 [ext_resource type="Texture2D" uid="uid://dedi74r1jvvkj" path="res://Asset/Backgrounds/purple.png" id="1_yxx3c"]
 [ext_resource type="Texture2D" uid="uid://wpynthr4ixtv" path="res://Asset/Seagull/PH_Logo.png" id="2_ccer4"]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ccer4")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1662271285]
 layout_mode = 1
