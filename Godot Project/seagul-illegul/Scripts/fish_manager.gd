@@ -19,3 +19,4 @@ func spawn_fish():
 	var f = fish_template.instantiate() #create new fish
 	add_child(f)
 	#Sunny note: add child to itself (FishManager)
+	

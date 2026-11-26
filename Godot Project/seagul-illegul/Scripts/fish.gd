@@ -36,6 +36,7 @@ func change_direction():
 	if global_position.y < 32:
 		global_position.y = 32
 		my_direction *= -1
+		animated_sprite_2d.flip_v = true
 		
 func despawn_check():
 	if global_position.y == my_starting_y:
