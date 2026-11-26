@@ -1,0 +1,217 @@
+[gd_scene format=3 uid="uid://chjmrf2utq8xx"]
+
+[ext_resource type="Texture2D" uid="uid://dedi74r1jvvkj" path="res://Asset/Backgrounds/purple.png" id="1_1k7lp"]
+[ext_resource type="Script" uid="uid://bvy0xtfq5wvmf" path="res://Scripts/UI/button_main_menu.gd" id="2_qhv6h"]
+[ext_resource type="Script" uid="uid://bqjgk3rb87cw3" path="res://Scripts/UI/button_quit.gd" id="3_ckmqb"]
+[ext_resource type="Texture2D" uid="uid://wpynthr4ixtv" path="res://Asset/Seagull/PH_Logo.png" id="4_68jqq"]
+
+[node name="2P_Game_Over" type="Control" unique_id=1617697081]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=1662271285]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1k7lp")
+expand_mode = 1
+
+[node name="PanelContainer" type="Panel" parent="." unique_id=20267975]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -93.5
+offset_right = 70.0
+offset_bottom = 93.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="game over" type="Label" parent="PanelContainer" unique_id=589977420]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 4.5
+offset_bottom = 27.5
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "WINNER : xx"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="score container" type="Panel" parent="PanelContainer/game over" unique_id=631353213]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 25.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Results" type="Label" parent="PanelContainer/game over/score container" unique_id=1755375570]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 14.0
+offset_bottom = 28.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 10
+text = "RESULTS"
+horizontal_alignment = 1
+
+[node name="hi-score text" type="Label" parent="PanelContainer/game over/score container/Results" unique_id=2118954134]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 21.0
+offset_top = 24.0
+offset_right = 14.0
+offset_bottom = 33.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 6
+text = "HI-SCORE :"
+
+[node name="score" type="Label" parent="PanelContainer/game over/score container/Results" unique_id=715257341]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 78.0
+offset_top = 24.0
+offset_right = -14.0
+offset_bottom = 33.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 6
+text = "XXXXXXXXXXX"
+horizontal_alignment = 1
+
+[node name="winner text" type="Label" parent="PanelContainer/game over/score container/Results" unique_id=95225417]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.25
+offset_top = 32.0
+offset_right = -66.75
+offset_bottom = 41.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 6
+text = "WINNER's SCORE :"
+
+[node name="winner score" type="Label" parent="PanelContainer/game over/score container/Results" unique_id=767294331]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 78.0
+offset_top = 32.0
+offset_right = -14.0
+offset_bottom = 41.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 6
+text = "XXXXXXXXXXX"
+horizontal_alignment = 1
+
+[node name="loser text" type="Label" parent="PanelContainer/game over/score container/Results" unique_id=125711869]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.25
+offset_top = 40.0
+offset_right = -66.75
+offset_bottom = 49.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 6
+text = "LOSER's SCORE :"
+
+[node name="loser score" type="Label" parent="PanelContainer/game over/score container/Results" unique_id=2100016665]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 78.0
+offset_top = 40.0
+offset_right = -14.0
+offset_bottom = 49.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 6
+text = "XXXXXXXXXXX"
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="ColorRect" parent="PanelContainer/game over" unique_id=1530725288]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 93.0
+offset_bottom = 153.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.7236963, 0.64430124, 0.7575296, 1)
+
+[node name="main menu" type="Button" parent="PanelContainer/game over/PanelContainer" unique_id=1345226970]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -21.0
+offset_right = 28.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 8
+text = "MAIN MENU"
+script = ExtResource("2_qhv6h")
+
+[node name="quit" type="Button" parent="PanelContainer/game over/PanelContainer" unique_id=718676112]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = 4.0
+offset_right = 28.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 8
+text = "QUIT
+"
+script = ExtResource("3_ckmqb")
+
+[node name="Image logo" type="TextureRect" parent="." unique_id=107284485]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.5
+offset_top = -74.0
+offset_right = 44.5
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_68jqq")
+expand_mode = 1
+
+[connection signal="pressed" from="PanelContainer/game over/PanelContainer/main menu" to="PanelContainer/game over/PanelContainer/main menu" method="_on_pressed"]
+[connection signal="pressed" from="PanelContainer/game over/PanelContainer/quit" to="PanelContainer/game over/PanelContainer/quit" method="_on_pressed"]

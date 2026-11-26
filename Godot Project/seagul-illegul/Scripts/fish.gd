@@ -38,7 +38,8 @@ func change_direction():
 		animated_sprite_2d.flip_v = true
 		
 func despawn_check():
-	if global_position.y == my_starting_y:
+	if global_position.y >= my_starting_y:
+		visible = false
 		queue_free()
 
 func _process(delta: float) -> void:
@@ -48,18 +49,10 @@ func _process(delta: float) -> void:
 	else:
 		despawn_check()
 
-#ENi Note: recycled Sunny's previous code as I forgot how to make signal functions.
-#func _on_body_entered(body: CharacterBody2D) -> void:
-	#if body.name == "Player1" || body.name == "Player2":
-	#print("colision detect")
-	#body.increase_hunger(my_heal)
-	#level_manager.increase_point(body.name,my_point)
-	#queue_free()
-
-
 func _on_body_entered(body: CharacterBody2D) -> void:
 	print("colision detect")
 	print(body.name)
 	body.increase_hunger(my_heal)
 	level_manager.increase_point(body.name,my_point)
+	visible = false
 	queue_free()
