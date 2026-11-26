@@ -59,6 +59,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: CharacterBody2D) -> void:
 	print("colision detect")
+	print(body.name)
 	body.increase_hunger(my_heal)
 	level_manager.increase_point(body.name,my_point)
 	queue_free()

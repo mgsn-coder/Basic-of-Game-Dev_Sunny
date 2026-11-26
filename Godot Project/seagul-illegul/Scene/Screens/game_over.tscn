@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dfaxmvj4tf74d"]
 
-[ext_resource type="Script" uid="uid://ckieghtm82e" path="res://Scripts/UI/game_over.gd" id="1_ccer4"]
-[ext_resource type="Texture2D" uid="uid://dedi74r1jvvkj" path="res://Asset/Backgrounds/purple.png" id="1_yxx3c"]
-[ext_resource type="Texture2D" uid="uid://wpynthr4ixtv" path="res://Asset/Seagull/PH_Logo.png" id="2_ccer4"]
+[ext_resource type="Texture2D" uid="uid://dedi74r1jvvkj" path="res://Asset/Backgrounds/purple.png" id="1_3bekd"]
+[ext_resource type="Script" uid="uid://bvy0xtfq5wvmf" path="res://Scripts/UI/button_main_menu.gd" id="2_3bekd"]
+[ext_resource type="Script" uid="uid://bqjgk3rb87cw3" path="res://Scripts/UI/button_quit.gd" id="3_2313i"]
+[ext_resource type="Texture2D" uid="uid://wpynthr4ixtv" path="res://Asset/Seagull/PH_Logo.png" id="4_bjmfv"]
 
 [node name="Game_Over" type="Control" unique_id=1617697081]
 layout_mode = 3
@@ -11,7 +12,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ccer4")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1662271285]
 layout_mode = 1
@@ -20,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_yxx3c")
+texture = ExtResource("1_3bekd")
 expand_mode = 1
 
 [node name="PanelContainer" type="Panel" parent="." unique_id=20267975]
@@ -225,6 +225,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 8
 text = "MAIN MENU"
+script = ExtResource("2_3bekd")
 
 [node name="quit" type="Button" parent="PanelContainer/Text Logo/PanelContainer" unique_id=718676112]
 layout_mode = 1
@@ -244,6 +245,7 @@ size_flags_vertical = 0
 theme_override_font_sizes/font_size = 8
 text = "QUIT
 "
+script = ExtResource("3_2313i")
 
 [node name="Image logo" type="TextureRect" parent="." unique_id=107284485]
 visible = false
@@ -259,8 +261,9 @@ offset_right = 44.5
 offset_bottom = -42.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ccer4")
+texture = ExtResource("4_bjmfv")
 expand_mode = 1
 
 [connection signal="pressed" from="PanelContainer/Text Logo/PanelContainer/main menu" to="." method="_on_main_menu_pressed"]
-[connection signal="pressed" from="PanelContainer/Text Logo/PanelContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="PanelContainer/Text Logo/PanelContainer/main menu" to="PanelContainer/Text Logo/PanelContainer/main menu" method="_on_pressed"]
+[connection signal="pressed" from="PanelContainer/Text Logo/PanelContainer/quit" to="PanelContainer/Text Logo/PanelContainer/quit" method="_on_pressed"]

@@ -80,6 +80,7 @@ func decrease_hunger(damage_value: int = 0):
 func check_hunger():
 	if current_hunger <= 0:
 		print("Game Over signal missing.") #TODO: make a proper death scene
+		get_tree().change_scene_to_file("res://game_over.tscn")
 
 func move_seagull():
 	global_position.x += current_speed_x * direction

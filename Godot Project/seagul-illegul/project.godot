@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Seagul Illegul"
-run/main_scene="uid://c44nteexuavqe"
+run/main_scene="uid://blha0kwgapyr1"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
