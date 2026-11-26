@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://chjmrf2utq8xx"]
 
 [ext_resource type="Texture2D" uid="uid://dedi74r1jvvkj" path="res://Asset/Backgrounds/purple.png" id="1_1k7lp"]
+[ext_resource type="Script" uid="uid://dvch7wurq8gdb" path="res://Scripts/UI/2p_game_over.gd" id="1_qhv6h"]
 [ext_resource type="Script" uid="uid://bvy0xtfq5wvmf" path="res://Scripts/UI/button_main_menu.gd" id="2_qhv6h"]
 [ext_resource type="Script" uid="uid://bqjgk3rb87cw3" path="res://Scripts/UI/button_quit.gd" id="3_ckmqb"]
 [ext_resource type="Texture2D" uid="uid://wpynthr4ixtv" path="res://Asset/Seagull/PH_Logo.png" id="4_68jqq"]
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qhv6h")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1662271285]
 layout_mode = 1
