@@ -28,7 +28,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y1hqu"]
 size = Vector2(13, 14)
 
-[node name="Fish" type="CharacterBody2D" unique_id=417690330]
+[node name="Fish" type="Area2D" unique_id=1756823252]
 script = ExtResource("1_2fpyu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1610082365]
@@ -40,3 +40,5 @@ frame_progress = 0.78170896
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1411297129]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_y1hqu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

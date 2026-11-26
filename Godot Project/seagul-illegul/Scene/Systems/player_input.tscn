@@ -21,6 +21,7 @@ script = ExtResource("1_yq6ly")
 
 [node name="Player1" parent="." unique_id=1819413524 instance=ExtResource("2_atroe")]
 unique_name_in_owner = true
+collision_mask = 1
 
 [node name="Player1_id" type="Label" parent="Player1" unique_id=759511724]
 offset_left = -5.0
@@ -48,6 +49,8 @@ script = ExtResource("3_atroe")
 [node name="Player2" parent="." unique_id=533506872 instance=ExtResource("2_atroe")]
 unique_name_in_owner = true
 position = Vector2(40, 0)
+collision_layer = 4
+collision_mask = 1
 
 [node name="Player2_id" type="Label" parent="Player2" unique_id=1363232473]
 offset_left = -5.0

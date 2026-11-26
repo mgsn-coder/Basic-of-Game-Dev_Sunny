@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Area2D
 
 const FISH = preload("res://Resources/fish.tres")
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -50,8 +50,16 @@ func _process(delta: float) -> void:
 		despawn_check()
 
 #ENi Note: recycled Sunny's previous code as I forgot how to make signal functions.
-func _on_body_entered(body: Node2D) -> void:
-	if body is Player:
-		body.increase_hunger(my_heal)
-		level_manager.increase_point(body.name,my_point)
-		queue_free()
+#func _on_body_entered(body: CharacterBody2D) -> void:
+	#if body.name == "Player1" || body.name == "Player2":
+	#print("colision detect")
+	#body.increase_hunger(my_heal)
+	#level_manager.increase_point(body.name,my_point)
+	#queue_free()
+
+
+func _on_body_entered(body: CharacterBody2D) -> void:
+	print("colision detect")
+	body.increase_hunger(my_heal)
+	level_manager.increase_point(body.name,my_point)
+	queue_free()

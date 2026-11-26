@@ -28,8 +28,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ey6sf"]
 size = Vector2(14, 13)
 
-[node name="Player" type="CharacterBody2D" unique_id=1819413524]
+[node name="Seagull" type="CharacterBody2D" unique_id=1819413524]
 collision_layer = 2
+collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_brub5")
 
