@@ -264,6 +264,5 @@ grow_vertical = 2
 texture = ExtResource("4_bjmfv")
 expand_mode = 1
 
-[connection signal="pressed" from="PanelContainer/Text Logo/PanelContainer/main menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="PanelContainer/Text Logo/PanelContainer/main menu" to="PanelContainer/Text Logo/PanelContainer/main menu" method="_on_pressed"]
 [connection signal="pressed" from="PanelContainer/Text Logo/PanelContainer/quit" to="PanelContainer/Text Logo/PanelContainer/quit" method="_on_pressed"]
