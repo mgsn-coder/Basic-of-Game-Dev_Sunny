@@ -17,6 +17,8 @@ func _process(delta: float) -> void:
 
 func spawn_fish():
 	var f = fish_template.instantiate() #create new fish
+	#Sunny note: Connecting fish with Level manager after the fish is created
+	#Level manager is the parent of fish manager
+	f.level_manager = get_parent() 
+	#Sunny note: fish manager adds the new fish under itself as a child
 	add_child(f)
-	#Sunny note: add child to itself (FishManager)
-	

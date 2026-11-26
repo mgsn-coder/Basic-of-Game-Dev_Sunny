@@ -26,7 +26,6 @@ func _init() -> void:
 	#TODO: find a proper way to make the fish to understand the water layer
 	global_position.y = randf_range(150, 175)
 	my_starting_y = global_position.y
-	level_manager = $"."
 
 func move():
 	global_position.x += my_speed_x
