@@ -9,6 +9,8 @@ func _ready() -> void:
 	#hi-score
 	points =GameMaster.high_scores[0]
 	hi_score_label.text = str(points)
+	if GameMaster.new_highscore:
+		hi_score_label.text += str(" NEW HI-SCORE!")
 	
 	#current score
 	#Sunny note: pick the first element of an array -> 1p's score
