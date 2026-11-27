@@ -17,6 +17,7 @@ func _ready() -> void:
 		player_input.get_child(1).global_position.y = -100
 		player_input.get_child(1).visible = false
 		level_hud.get_child(1).visible = false
+	Music.change_music()
 
 func increase_point(body_name: String, current_point: int = 0):
 	#ENI Note: using match so I can learn Godot's way of switch cases and this could be expanded to 2+ game feature.
@@ -40,14 +41,14 @@ func check_player_hunger():
 			print("Player 1 Lose")
 			#Sunny note: make 1P + 2P points global variable
 			GameMaster.inform_previous_points(points,1)
-			get_tree().change_scene_to_file("res://Scene/Screens/2p_game_over.tscn")
+			GameMaster.load_new_scene("res://Scene/Screens/2p_game_over.tscn")
 		if player_2.current_hunger <= 0:
 			print("Player 2 Lose")
 			GameMaster.inform_previous_points(points,0)
-			get_tree().change_scene_to_file("res://Scene/Screens/2p_game_over.tscn")
+			GameMaster.load_new_scene("res://Scene/Screens/2p_game_over.tscn")
 	else:
 		if player_1.current_hunger <= 0:
 			print("Player Lose")
 			#Sunny note: make 1P + 2P points global variable
 			GameMaster.inform_previous_points(points)
-			get_tree().change_scene_to_file("res://Scene/Screens/1p_game_over.tscn")
+			GameMaster.load_new_scene("res://Scene/Screens/1p_game_over.tscn")

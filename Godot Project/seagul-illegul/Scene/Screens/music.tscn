@@ -1,10 +1,20 @@
 [gd_scene format=3 uid="uid://duxc2mov3omiq"]
 
 [ext_resource type="AudioStream" uid="uid://dj8o33oogl0wi" path="res://Asset/music/time_for_adventure.mp3" id="1_kt2l4"]
-[ext_resource type="Script" uid="uid://bsyvkaoad8mah" path="res://Scene/Screens/old/high_score.gd" id="2_cqx6a"]
+[ext_resource type="AudioStream" uid="uid://4ldkbqbdf7ee" path="res://Asset/music/sunnyday.ogg" id="2_cqx6a"]
+[ext_resource type="Script" uid="uid://bw4p8iyka1ios" path="res://Scripts/music.gd" id="3_swhgs"]
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_4tjfh"]
+clip_count = 2
+clip_0/name = &"main_menu"
+clip_0/stream = ExtResource("1_kt2l4")
+clip_0/auto_advance = 0
+clip_1/name = &"level"
+clip_1/stream = ExtResource("2_cqx6a")
+clip_1/auto_advance = 0
 
 [node name="Music" type="AudioStreamPlayer2D" unique_id=1550214913]
-stream = ExtResource("1_kt2l4")
+stream = SubResource("AudioStreamInteractive_4tjfh")
 autoplay = true
 bus = &"music"
-script = ExtResource("2_cqx6a")
+script = ExtResource("3_swhgs")

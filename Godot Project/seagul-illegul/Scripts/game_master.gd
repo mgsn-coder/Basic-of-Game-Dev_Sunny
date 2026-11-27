@@ -28,9 +28,14 @@ func inform_previous_points(points: Array[int] = [0,0], winner: int = -1):
 	previous_winner = winner
 	update_highscore()
 
-func give_highscore(both: bool = false):
-	if !both:
-		if playing_2P_mode:
-			return high_scores[1]
-		return high_scores[0]
-	return high_scores
+'''
+ENI Note: trying to make a new way to load a new scene.
+I did not find any signal which would tell the global variable that
+a new scene has been loaded.
+I want it for more smoother music changing.
+
+This was the closest I could find:
+https://forum.godotengine.org/t/i-need-a-line-of-code-that-detects-when-the-scene-is-changed/12664/4
+''' 
+func load_new_scene(path: String = ""):
+	get_tree().change_scene_to_file(path)

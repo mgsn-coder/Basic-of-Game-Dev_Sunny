@@ -11,6 +11,7 @@ func _ready() -> void:
 	hi_score_label.text = str(points)
 	if GameMaster.new_highscore:
 		hi_score_label.text += str(" NEW HI-SCORE!")
+	Music.change_music()
 	
 	#current score
 	#Sunny note: pick the first element of an array -> 1p's score

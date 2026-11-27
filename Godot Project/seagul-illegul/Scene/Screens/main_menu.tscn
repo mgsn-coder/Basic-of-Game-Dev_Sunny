@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://blha0kwgapyr1"]
 
 [ext_resource type="Texture2D" uid="uid://cmsnt2vkt5g1j" path="res://Asset/Seagull/Beach.png" id="1_8suhn"]
+[ext_resource type="Script" uid="uid://drd8fqxm28gyn" path="res://Scripts/main_menu_screen.gd" id="1_o1pm8"]
 [ext_resource type="Script" uid="uid://b25j1qesdybky" path="res://Scripts/UI/button_1_player.gd" id="2_8suhn"]
 [ext_resource type="Script" uid="uid://cy02k06jh3j3r" path="res://Scripts/UI/button_2_player.gd" id="3_qmpua"]
 [ext_resource type="Texture2D" uid="uid://wpynthr4ixtv" path="res://Asset/Seagull/PH_Logo.png" id="4_fak3o"]
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_o1pm8")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1662271285]
 layout_mode = 1

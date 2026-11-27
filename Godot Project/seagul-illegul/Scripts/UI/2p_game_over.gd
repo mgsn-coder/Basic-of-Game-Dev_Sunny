@@ -20,3 +20,4 @@ func _ready() -> void:
 	hs_score.text = str(GameMaster.high_scores[1])
 	if GameMaster.new_highscore:
 		hs_score.text += str(" NEW HI-SCORE!")
+	Music.change_music()
