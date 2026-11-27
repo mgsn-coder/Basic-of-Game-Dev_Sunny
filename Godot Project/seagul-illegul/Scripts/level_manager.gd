@@ -39,11 +39,11 @@ func check_player_hunger():
 		if player_1.current_hunger <= 0:
 			print("Player 1 Lose")
 			#Sunny note: make 1P + 2P points global variable
-			GameMaster.inform_previous_points(points)
+			GameMaster.inform_previous_points(points,1)
 			get_tree().change_scene_to_file("res://Scene/Screens/2p_game_over.tscn")
 		if player_2.current_hunger <= 0:
 			print("Player 2 Lose")
-			GameMaster.inform_previous_points(points)
+			GameMaster.inform_previous_points(points,0)
 			get_tree().change_scene_to_file("res://Scene/Screens/2p_game_over.tscn")
 	else:
 		if player_1.current_hunger <= 0:
